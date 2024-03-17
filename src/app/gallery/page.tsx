@@ -5,33 +5,33 @@ import React, { useEffect, useState } from 'react'
 const Index = () => {
     const [imgs,setImgs] = useState([]);
 
-    const fetchDataAndSetImgs = async () => {
-        try {
-          const response = await fetch('https://api.jsonbin.io/v3/b/65bcd509dc746540189f3df5', {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Master-Key': '$2a$10$tKlp8yokSY5sQ58K9UJosuUM4/0k2FCFKG2LqzaNegXtNdlivpIwG'
-            }
-          });
+    // const fetchDataAndSetImgs = async () => {
+    //     try {
+    //       const response = await fetch('https://api.jsonbin.io/v3/b/65bcd509dc746540189f3df5', {
+    //         method: 'GET',
+    //         headers: {
+    //           'Content-Type': 'application/json',
+    //           'X-Master-Key': '$2a$10$tKlp8yokSY5sQ58K9UJosuUM4/0k2FCFKG2LqzaNegXtNdlivpIwG'
+    //         }
+    //       });
       
-          if (!response?.ok) {
-            throw new Error(`Failed to fetch data. Status: ${response?.status}`);
-          }
+    //       if (!response?.ok) {
+    //         throw new Error(`Failed to fetch data. Status: ${response?.status}`);
+    //       }
       
-          const data = await response.json();
-          setImgs(data?.record); // Assuming 'record' is the property containing the images in the response
-          console.log('Data fetched and set to setImgs:', setImgs);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
+    //       const data = await response.json();
+    //       setImgs(data?.record); // Assuming 'record' is the property containing the images in the response
+    //       console.log('Data fetched and set to setImgs:', setImgs);
+    //     } catch (error) {
+    //       console.error('Error fetching data:', error);
+    //     }
+    //   };
       
-    useEffect(() => {
+    // useEffect(() => {
       
     
-       fetchDataAndSetImgs()
-    }, [])
+    //    fetchDataAndSetImgs()
+    // }, [])
 
   return (
     <Box>

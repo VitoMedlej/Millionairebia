@@ -8,8 +8,8 @@ import './style.css'
 
 
 const Footer = () => (
-  <footer className="site-footer " style={{color:'white',background:'#161e21'}}>
-    <div className="container " style={{color:'white',background:'#161e21'}}>
+  <footer className="site-footer " style={{color:'white',background:'black'}}>
+    <div className="container " style={{color:'white',background:'black'}}>
       <div className="site-footer__top ">
         <div className="site-footer__description">
           <div className='logos cursor'>
@@ -18,11 +18,11 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/5262b9e9-1a00-4d46-8848-c02f68e4c14b/logo.jpg' alt="Shine Plus Car Spa Lebanon Logo" />
+            <img className='img ' src='https://ucarecdn.com/76f845bd-a452-45cd-959f-d72f07854b9c/419002048_1346136676081363_2742258375729400010_n.jpg' alt="Millionairebia Lebanon Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.95em',color:"2b2b2b" }}  className='footer-p '>
-          At Shine Plus Car Spa, we offer top-notch car care services in Lebanon. From expert car wash and interior detailing to exterior treatments, window tinting, vinyl wrap, upholstery repair, body paint, and more – trust us for a sparkling clean and well-maintained ride.
+          At Millionairebia, we believe in crafting success stories. Our private members club is a testament to this belief. Spanning across 120 countries, we offer a luxury experience that is unparalleled. From boardrooms to breathtaking experiences, we redefine what luxury means.
           </Typography>
           {/* <SMicons/> */}
 
@@ -45,7 +45,7 @@ const Footer = () => (
             {/* <li><Link href="/rental/collection">All Products</Link></li>  */}
             <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/apply">Apply For Memebership</Link></li>
           </ul>
      
           <ul  className='ul-white' style={{color:'white'}}>
@@ -54,10 +54,10 @@ const Footer = () => (
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
             
-            <li><a href="https://www.facebook.com/shinepluscarspa/" target="_blank" rel="noreferrer" >Facebook </a></li>
-            <li><a href="https://www.instagram.com/shineplus_carspa/" target="_blank" rel="noreferrer" >Instagram</a></li>
+            <li><a href="https://www.facebook.com/Millionairebia/" target="_blank" rel="noreferrer" >Facebook </a></li>
+            <li><a href="https://www.instagram.com/millionairebia/" target="_blank" rel="noreferrer" >Instagram</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >Whatsapp</a></li>
-            <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+961 3 545 717</a></li>
+            <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+961 123 456 789</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>
         </div>

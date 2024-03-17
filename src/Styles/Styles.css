@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif !important;
+  background: #02040b;
 }
 
 *, h1, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
@@ -13,8 +14,24 @@ body {
   width: 100%;
 }
 
+.h100 {
+  height: 100%;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 .color3 {
-  color: #161e21 !important;
+  color: black !important;
+}
+
+.end {
+  justify-content: end;
+}
+
+.start {
+  justify-content: start;
 }
 
 .img {
@@ -29,15 +46,15 @@ body {
 }
 
 .bg2 {
-  background: #cf2935 !important;
+  background: #c7ac7f !important;
 }
 
 .borderColor {
-  border-color: #161e21 !important;
+  border-color: #070707 !important;
 }
 
 .borderColor2 {
-  border-color: #cf2935 !important;
+  border-color: #c7ac7f !important;
 }
 
 .rounded {
@@ -45,11 +62,11 @@ body {
 }
 
 .color2 {
-  color: #cf2935 !important;
+  color: #c7ac7f !important;
 }
 
 .color {
-  color: #161e21 !important;
+  color: #070707 !important;
 }
 
 .flex {
@@ -93,7 +110,7 @@ body {
 }
 
 .bg {
-  background: #161e21 !important;
+  background: #070707 !important;
 }
 
 .white {
@@ -146,7 +163,7 @@ button[disabled] {
 }
 
 .clr {
-  color: #161e21 !important;
+  color: #070707 !important;
 }
 
 .justify-around {
@@ -154,7 +171,7 @@ button[disabled] {
 }
 
 .clr2 {
-  color: #cf2935 !important;
+  color: #c7ac7f !important;
 }
 
 .auto {

@@ -9,10 +9,10 @@ import ContextWrapper from '@/context/Contexts'
 import ContactSection from '@/Components/ContactSection/ContactSection'
 
 export const metadata = {
-    title: 'Shine Plus Car Spa - Premier Car Care Services in Lebanon',
-    description: `At Shine Plus Car Spa, we offer top-notch car care services in Lebanon. From expert car wash and interior detailing to exterior treatments, window tinting, vinyl wrap, upholstery repair, body paint, and more – trust us for a sparkling clean and well-maintained ride.`,
+    title: 'Millionairebia - Premier Car Care Services in Lebanon',
+    description: `At Millionairebia, we offer top-notch car care services in Lebanon. From expert car wash and interior detailing to exterior treatments, window tinting, vinyl wrap, upholstery repair, body paint, and more – trust us for a sparkling clean and well-maintained ride.`,
     icons: {
-        icon: `https://ucarecdn.com/5262b9e9-1a00-4d46-8848-c02f68e4c14b/logo.jpg`
+        icon: `https://ucarecdn.com/0f405681-7972-40ce-872a-9fe8bbc1918a/logobia.jpg`
     }
 }
 
@@ -32,8 +32,8 @@ export default function RootLayout({children} : {
                 <ContextWrapper>
                     <Navbar/>
                     <Sidebar cates={undefined}/>
-                    <QuickCart/>
-                    <ScrollToTop/>
+                    {/* <QuickCart/> */}
+                    {/* <ScrollToTop/> */}
                     <main >
 
                      {children}

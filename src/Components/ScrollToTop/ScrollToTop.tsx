@@ -27,14 +27,14 @@ const ScrollUp = () => {
     
     <Btn sx={{ border:'1px solid transparent',
     borderRadius:25,
-    background:'#161e21  !important',
+    background:'black  !important',
     boxShadow:`rgba(0, 0, 0, 0.24) 0px 3px 8px`,
     padding:0,':hover':{background:'transparent'}}} className='bg'>
       <Box className='center bg flex align-center' sx={{width:'30px',ml:1}}>
       <img src="https://www.7979.org.my/uploads/1/2/6/3/126376279/whatsapp-icon_1.png" alt="Whatsapp Icon" className="img" />
       </Box>
          <Box  className='bg white' sx={{mr:1,py:1,px:2,borderRadius:25,color:''}}>
-         +961 3 545 717
+         +961 123 456 789
       </Box>
    
     </Btn>

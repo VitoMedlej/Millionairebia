@@ -1,12 +1,12 @@
 "use client"
 import {Box, Divider, Typography} from '@mui/material'
 import { Dispatch, SetStateAction } from 'react'
-import Link from 'next/link'
-import { IProduct } from '@/Types/Types'
+// import Link from 'next/link'
+// import { IProduct } from '@/Types/Types'
 import Btn from '../Btn/Btn'
 import SwiperCarousel from './SwiperCarousel/SwiperCarousel'
 import { useRouter } from 'next/navigation'
-import Perks from '../Perks/Perks'
+// import Perks from '../Perks/Perks'
 const ProductCollection = ({sx,delay,Collectiontitle,selectedCars,setQuickView} : {
     Collectiontitle: string,
     delay : number,
@@ -81,9 +81,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,selectedCars,setQuickView} 
                 
                 selectedCars={selectedCars}/>
             </Box>
-            <Box>
-                <Perks/>
-            </Box>
+            
 
    
 {/* <Divider  light /> */}

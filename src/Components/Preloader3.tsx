@@ -15,12 +15,12 @@ import useLanguage from '@/Hooks/useLanguage';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        {img:`https://ucarecdn.com/e5b67a41-beb9-4882-91e9-dd9f6fbbc100/bestautodetailing1200x801.webp`},
-        {img : `https://i.pinimg.com/originals/c2/fe/dc/c2fedcef65f8ceb8cf4937c6407e6792.jpg`},
-        {img:`https://www.schellerautorepairlexington.com/build/assets/files/page_editor_header_images/iStock-1150096156.jpg`},
+        {img:`https://lirp.cdn-website.com/05b938f9/dms3rep/multi/opt/home2-b70c3823-9c60670a-45e534c5-1920w.png`},
+        {img : `https://www.dubai-developments.com/images/vm.jpg`},
+        {img:`https://danielasulek.com/wp-content/uploads/2021/09/shutterstock_281520980-scaled.jpg`},
      ])
      const redir = () => {
-        router.push('/services')
+        router.push('/apply')
         // console.log('abc')
      }
     useEffect(() => {
@@ -59,7 +59,7 @@ const Preloader3 = ({res}:{res:any}) => {
                 spaceBetween={0}
                 loop={true}
                 autoplay={{
-                delay: 3000,
+                delay: 4000,
                 disableOnInteraction: true
             }}
                 modules={[Autoplay]}
@@ -79,7 +79,8 @@ const Preloader3 = ({res}:{res:any}) => {
                         <Container className='auto center text-center ' sx={{width:'100%'}} maxWidth='lg' disableGutters>
                             
                       
-                            <Box sx={{pointerEvents:'none',top:0,right:0,width:'100%',zIndex:1123,height:'100%',background:'black',opacity:.55}} className="absolute">
+                            <Box sx={{pointerEvents:'none',top:0,right:0,width:'100%',
+                            zIndex:1123,height:'100%',background:'black',opacity:.75}} className="absolute">
 
                             </Box>
                             <Box 
@@ -94,19 +95,19 @@ const Preloader3 = ({res}:{res:any}) => {
                                                           <Typography 
                                                           className='clr2 center text-center auto'
                                 sx={{fontWeight:700,fontSize:{xs:'1.185em',sm:'1.2em'},mt:1,maxWidth:'600px'}}>
-                                   Shine Plus Car Spa
+                                   Welcome to Millionairebia
 
                                 </Typography>
                                 <Typography 
                                 
-                                sx={{color:'white',fontSize:{xs:'2em',sm:'3.1em',md:'3.65em',lg:'3.5em'},fontWeight:'900'}}>
+                                sx={{color:'white',fontSize:{xs:'1.6em',sm:'3.1em',md:'3.65em',lg:'3.5em'},fontWeight:'900'}}>
                              
-                             WHERE EXCELLENCE MEETS AUTOMOTIVE CARE
+                             Where Luxury Meets Success Worldwide
                                 </Typography>
                                 <Typography 
                                 className='center auto text-center'
                                 sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'600px'}}>
-                                  We take pride in providing the best-in-class services to keep your vehicle in pristine condition.
+                                 With a presence in 120 countries, we redefine luxury from boardrooms to breathtaking experiences.
 
                                 </Typography>
                                 <Box className="flex auto">
@@ -114,8 +115,8 @@ const Preloader3 = ({res}:{res:any}) => {
                                 <Btn
                                 onClick={()=>redir()}
                                 
-                                className='bg white borderColor ' sx={{mx:'auto',mt:3}}>
-                             View Services
+                                className=' ' sx={{mx:'auto',mt:3}}>
+                             Join Us
 
                                 </Btn>
                             

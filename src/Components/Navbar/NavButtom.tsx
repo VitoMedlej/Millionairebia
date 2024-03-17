@@ -63,7 +63,7 @@ const NavButtom = () => {
             className='flex   '
             sx={{
             maxWidth: 'lg',
-            justifyContent: 'flex-end',
+            // justifyContent: 'flex-end',
 
             overflow:'hidden',
             py:1.5,
@@ -105,7 +105,7 @@ Home
 {
     [
 `About`,
-`Services`,
+`Apply`,
 
     ].map(i=>{
         return <Link key={i} className='black decor-none ' href={`/${i.toLocaleLowerCase()}`}>

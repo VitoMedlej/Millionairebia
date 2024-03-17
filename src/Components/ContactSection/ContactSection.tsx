@@ -21,7 +21,7 @@ const Index = () => {
       const [Phone, setPhone] = useState('')
 const [FullName, setFullName] = useState('')
 const [Message, setMessage] = useState('')
-let message = `Hello my name is ${FullName}. My phone number is ${Phone}. I am interested in your services.`;
+let message = `Hello my name is ${FullName}. My phone number is ${Phone}. I am interested in your club.`;
 
 let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent(message)}`;
   const sendMessage = async(e : any) => {
@@ -53,10 +53,12 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
     <>
  
 
- <Perks/>
+ {/* <Perks/> */}
 
   
-    <Grid id='contactsection' container maxWidth='lg'  className='auto'  sx={{pt:20,pb:5}}>
+    <Grid id='contactsection' container maxWidth='lg'  className='auto'  sx={{
+      background:'white',
+      pt:20,pb:5}}>
     <Box className='flex auto w100'>
        
                 {/* <Divider></Divider> */}
@@ -69,15 +71,15 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
         Contact Information:
         </Typography>
   
-  <a className='flex auto  items-center align-center gap gap1 black' href='https://wa.me/+96103545717' target='_blank' rel='noopener'>
+  <a className='flex auto  items-center align-center gap gap1 black' href='https://wa.me/+9611234567' target='_blank' rel='noopener'>
     
         <Typography sx={{fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
-    +961 03 545 717
+    +961 0123 456 789
         </Typography>
   </a>
 
-  <a className='flex auto  items-center align-center gap gap1 black' href='https://www.instagram.com/shineplus_carspa/' target='_blank' rel='noopener'>
+  <a className='flex auto  items-center align-center gap gap1 black' href='https://www.instagram.com/millionairebia/' target='_blank' rel='noopener'>
     
         <Typography sx={{fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
@@ -85,7 +87,7 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
         </Typography>
   </a>
 
-  <a className='flex auto  items-center align-center gap gap1 black' href='https://www.facebook.com/shinepluscarspa/' target='_blank' rel='noopener'>
+  <a className='flex auto  items-center align-center gap gap1 black' href='https://www.instagram.com/millionairebia/' target='_blank' rel='noopener'>
     
         <Typography sx={{fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
@@ -104,7 +106,9 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
     </Container>
         </Grid> 
 
-        <Grid sx={{mt:{xs:2,sm:0}}} className='auto col center flex' item xs={12} sm={8} md={5.5}>
+        <Grid sx={{
+          background:'white',
+          mt:{xs:2,sm:0}}} className='auto col center flex' item xs={12} sm={8} md={5.5}>
           <Typography component='h1' sx={{color:'green',fontWeight:'500',textAlign:'center'}} className='p'>{status === 200 ? 'Message Sent Successfully!' : ""}</Typography>
             <Box ref={form} onSubmit={(e : any)=>sendMessage(e)} component='form' sx={{gap:1,
           py:2.5,
@@ -112,14 +116,17 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
           maxWidth:'sm',
           px:'1em',
             
-         }} className='flex space-between wrap'>
-          <Typography component='p' sx={{width:'100%',fontWeight:'600',fontSize:'1.12em'}} className='h1'>Leave us a message</Typography>
+         }} className='flex space-between wrap black'>
+          <Typography component='p' sx={{width:'100%',fontWeight:'600',fontSize:'1.12em'}} className='h1 black'>Leave us a message</Typography>
                <TextField 
               
               value={FullName}
 
               onChange={(e)=>setFullName(e?.target?.value)} 
-              name={'FullName'} sx={{width:'99%',py:1}} variant='outlined' placeholder='Full Name'/>
+              name={'FullName'} sx={{
+                color:'black',
+                borderColor:'black',
+                width:'99%',py:1}} variant='filled' placeholder='Full Name'/>
            {/* <DatePicker name='StartDate' selected={startDate} onChange={(date:Date) => setStartDate(date)} /> */}
            {/* <DatePicker  name='EndDate' selected={endDate} onChange={(date:Date) => setEndDate(date)} /> */}
             {/* <DatePicker
@@ -134,17 +141,17 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
   onChange={(newValue) => setDate2(`${newValue}`)}
 /> */}
              
-              {/* <TextField name={'CarName'} onChange={(e)=>setEmail(e?.target?.value)} variant='outlined' sx={{width:'99%',py:1}} type='text' placeholder='Car Type'/> */}
+              <TextField name={'Email'} onChange={(e)=>setEmail(e?.target?.value)} variant='filled' sx={{width:'99%',py:1}} type='text' placeholder='Email Address'/>
               <TextField name={'Phone'} 
               value={Phone}
             type='number'
               onChange={(e)=>setPhone(e?.target?.value)} 
-              variant='outlined' sx={{width:'99%',py:1,}} placeholder='Phone Number'/>
+              variant='filled' sx={{width:'99%',py:1,}} placeholder='Phone Number'/>
               <TextField 
               value={Message}
               onChange={(e)=>setMessage(e?.target?.value)} 
               
-              name={'Message'} multiline={true} variant='outlined' rows={4}  sx={{width:'99%',py:2}} placeholder='Message'/>
+              name={'Message'} multiline={true} variant='filled' rows={4}  sx={{width:'99%',py:2}} placeholder='Message'/>
               <Btn
 submit
    

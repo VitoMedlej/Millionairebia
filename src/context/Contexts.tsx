@@ -1,6 +1,5 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react";
-import NextNProgress from 'nextjs-progressbar';
 import { loadState, saveState } from "@/Utils/LocalstorageFn";
 
 

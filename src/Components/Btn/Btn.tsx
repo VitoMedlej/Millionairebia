@@ -5,14 +5,16 @@ import React from 'react'
 
 
 let style1 = {
-  color: 'white',
-  background: 'black',
-  border:'1px solid #cf2935',
-  borderRadius: '3px', 
+  color: '#c7ac7f ',
+  background: 'transparent',
+  border:'1px solid #c7ac7f ',
+  borderRadius: '0', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
-      background: '#0273b5',
+      background: 'black !important',
+  border:'1px solid black ',
+
       color:'white',
       transform: 'scale(1.05)',
   },
@@ -27,7 +29,7 @@ let style2 = {
   color: 'white',
   background: 'transparent',
   border: '1px solid white',
-  borderRadius: '3px', 
+  borderRadius: '0', 
 
   // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   transition: 'background 0.3s ease, transform 0.2s ease',
@@ -49,7 +51,7 @@ const Btn = ({v2,disabled,onClick,className,children,sx,submit}:{submit?:boolean
   return (
     <Button
     type={submit ? 'submit' : 'button'}
-    className={`trans bg2 ${className ? className : ''}`}
+    className={`trans  ${className ? className : ''}`}
     disabled={disabled || false}
     onClick={onClick &&onClick}
     sx={v2 ? {...style2 , ...sx} : {...style1 , ...sx} }>{children}</Button>

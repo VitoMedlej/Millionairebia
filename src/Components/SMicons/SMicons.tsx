@@ -8,9 +8,9 @@ import {BsTiktok} from 'react-icons/bs';
 const sm = [
     {
         Icon:'https://images.squarespace-cdn.com/content/v1/56e2e0c520c6472a2586add2/1615388332386-LFQRQFE53FIOLDRNADTY/2.png',
-        href:'https://www.instagram.com/pets_town_lb/?igshid=MzRlODBiNWFlZA%3D%3D'
+        href:'https://www.instagram.com/millionairebia/'
     },
-    {Icon:'https://logospng.org/download/whatsapp/logo-whatsapp-4096.png',href:'https://wa.me/+96103545717'},
+    {Icon:'https://logospng.org/download/whatsapp/logo-whatsapp-4096.png',href:'https://wa.me/+9611234567'},
   
  ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {

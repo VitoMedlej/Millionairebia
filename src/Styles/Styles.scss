@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif !important;
-
+    background: #02040b;
 
 }
 * ,h1,h2,h3,h4,h5,h6 ,p,button,input,select,textarea,a{
@@ -13,11 +13,24 @@ body {
 .w100 {
     width:100%
 }
-$color : #161e21 !important;
-$color2 : #cf2935 !important;
-$color3 : #161e21 !important;
+.h100 {
+    height: 100%;
+}
+.underline {
+    text-decoration: underline;
+}
+$color : #070707 !important;
+$color2 : #c7ac7f !important;
+$color3 : black !important;
 .color3 {
     color: $color3;
+}
+.end {
+    justify-content: end;
+}
+.start{
+    justify-content: start;
+
 }
 .img {
     object-fit: cover;
@@ -163,3 +176,8 @@ button[disabled]{
 .green {
     color: green;
 }
+// .MuiInputBase-input , .MuiFilledInput-input , .css-10botns-MuiInputBase-input-MuiFilledInput-input {
+
+//     color:white;
+//     border: 1px solid white;
+// }
