@@ -6,7 +6,7 @@ import React from 'react'
 
 
 
-export const postsArray = [
+ const postsArray = [
     {
       title: 'Step into the Extravagance of MillionaireBia: Where Luxury Knows No Bounds',
       date: 'Mar 9, 2024',
