@@ -24,7 +24,7 @@ export const postsArray = [
     {
       title: 'Revel in the Exclusivity of MillionaireBia: Where Every Moment is Extraordinary',
       date: 'Sept 14, 2023',
-      img: 'https://www.varchev.com/wp-content/uploads/2019/10/The-Millionaire-Mindset.jpg',
+      img: 'https://www.varchev.com/wp-content/uploads/2019/10/The-Millionaire-Mindset.jpg+++',
       id: '2',
       tags: ['High Society', 'VIP Treatment', 'Luxury Retreats'],
     },
@@ -32,7 +32,7 @@ export const postsArray = [
   ];
 
 
-const page = () => {
+const Index = () => {
     const router = useRouter()
 
   return (
@@ -85,4 +85,4 @@ return <Box key={i.id} className='shadow' sx={{maxWidth:'400px',my:1,width:{xs:'
   )
 }
 
-export default page
+export default Index

@@ -73,7 +73,7 @@ PreLoader = ({data,resImages}:any) => {
                 <Typography 
                                 className='white'
                                 sx={{fontSize:{xs:'.85em',sm:'1em'},mt:1,maxWidth:'600px'}}>
-              With Millionairebia's presence felt across continents, our private members club offers access to a tapestry of experiences that redefine opulence. Join our global community and unlock a lifestyle where every moment is an epitome of grandeur and achievement.
+              With Millionairebia&apos;s presence felt across continents, our private members club offers access to a tapestry of experiences that redefine opulence. Join our global community and unlock a lifestyle where every moment is an epitome of grandeur and achievement.
                 </Typography>
                 <Btn
                 onClick={()=>router.push('/apply')}
@@ -258,7 +258,7 @@ Become a Member
         Subscribe to Our Newsletters
       </Typography>
       <Typography className='white' sx={{fontWeight:700,fontSize:'2em',fontStyle:'italic',textTransform:''}}>
-      Get The Millionairebia's Club newsletters to enjoy discounts to our partners products, and services.
+      Get The Millionairebia&apos;s Club newsletters to enjoy discounts to our partners products, and services.
       </Typography>
       <TextField 
        name={'Email'} value={email} onChange={(e)=>setEmail(e?.target?.value)} 
