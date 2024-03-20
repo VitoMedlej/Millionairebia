@@ -162,7 +162,7 @@ PreLoader = ({data,resImages}:any) => {
                      <Typography 
                                      className='white'
                                      sx={{fontSize:{xs:'.85em',sm:'1em'},mt:1,maxWidth:'600px'}}>
-                  Whether you're a seasoned entrepreneur, a creative visionary, or a connoisseur of luxury, our club offers a platform where aspirations are nurtured, connections are forged, and dreams become reality.
+                  Whether you&apos;re a seasoned entrepreneur, a creative visionary, or a connoisseur of luxury, our club offers a platform where aspirations are nurtured, connections are forged, and dreams become reality.
                      </Typography>
                      <Btn
                      onClick={()=>router.push('/apply')}
