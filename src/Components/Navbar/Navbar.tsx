@@ -124,11 +124,13 @@ export default function Navbar() {
 
             <Box sx={{width:{xs:'97%',sm:'98%'}}} className="flex  items-center">
 
-              <Box className="start w100 flex">
+              <Box className="start w100 flex" sx={{zIndex:'124124124'}}>
               <Typography 
               className='underline cursor pointer'
-              sx={{color:'white',fontSize:{xs:'.5em',sm:'.70em'},textAlign:'end',fontWeight:600}}>
-            @shineplus_carspa
+              sx={{color:'#833AB4',
+              zIndex:'124124124'
+              ,fontSize:{xs:'.5em',sm:'.70em'},textAlign:'end',fontWeight:600}}>
+            @Millionairebia
             </Typography>
               </Box>
 
@@ -155,7 +157,7 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Home
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/`}>
+<Link className='white decor-none ' href={`/blog`}>
 
 <Typography 
 className=' cursor center white  gap1 white decor-none captialize'
@@ -167,7 +169,7 @@ mx:'1em',
 alignItems: 'center',
 
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-About
+Blog
 </Typography>
 </Link>
 <Link className='flex center   aling-center items-center '  href='/' color='inherit'>
@@ -186,7 +188,7 @@ About
         alt="Millionairebia  logo"/>
 </Box>
 </Link>
-<Link className='white decor-none ' href={`/`}>
+<Link className='white decor-none ' href={`/#contactsection`}>
 
 <Typography 
 className=' cursor center white  gap1 white decor-none captialize'
@@ -201,7 +203,7 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Contact
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/`}>
+<Link className='white decor-none ' href={`/apply`}>
 
 <Typography 
 className=' cursor center white  gap1 white decor-none captialize'

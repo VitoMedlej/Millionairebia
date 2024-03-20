@@ -57,7 +57,7 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
 
   
     <Grid id='contactsection' container maxWidth='lg'  className='auto'  sx={{
-      background:'white',
+      // background:'white',
       pt:20,pb:5}}>
     <Box className='flex auto w100'>
        
@@ -71,7 +71,7 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
         Contact Information:
         </Typography>
   
-  <a className='flex auto  items-center align-center gap gap1 black' href='https://wa.me/+9611234567' target='_blank' rel='noopener'>
+  <a className='flex auto  items-center align-center gap gap1 white' href='https://wa.me/+9611234567' target='_blank' rel='noopener'>
     
         <Typography sx={{fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
@@ -79,7 +79,7 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
         </Typography>
   </a>
 
-  <a className='flex auto  items-center align-center gap gap1 black' href='https://www.instagram.com/millionairebia/' target='_blank' rel='noopener'>
+  <a className='flex auto  items-center align-center gap gap1 white' href='https://www.instagram.com/millionairebia/' target='_blank' rel='noopener'>
     
         <Typography sx={{fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
@@ -87,14 +87,14 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
         </Typography>
   </a>
 
-  <a className='flex auto  items-center align-center gap gap1 black' href='https://www.instagram.com/millionairebia/' target='_blank' rel='noopener'>
+  <a className='flex auto  items-center align-center gap gap1 white' href='https://www.instagram.com/millionairebia/' target='_blank' rel='noopener'>
     
         <Typography sx={{fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
     Facebook
         </Typography>
   </a>
-  <a className='flex auto  items-center align-center gap gap1 black' href='' target='_blank' rel='noopener'>
+  <a className='flex auto  items-center align-center gap gap1 white' href='' target='_blank' rel='noopener'>
   <CiLocationOn/>
         <Typography sx={{my:2,fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
@@ -107,7 +107,7 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
         </Grid> 
 
         <Grid sx={{
-          background:'white',
+          // background:'white',
           mt:{xs:2,sm:0}}} className='auto col center flex' item xs={12} sm={8} md={5.5}>
           <Typography component='h1' sx={{color:'green',fontWeight:'500',textAlign:'center'}} className='p'>{status === 200 ? 'Message Sent Successfully!' : ""}</Typography>
             <Box ref={form} onSubmit={(e : any)=>sendMessage(e)} component='form' sx={{gap:1,
@@ -116,16 +116,20 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
           maxWidth:'sm',
           px:'1em',
             
-         }} className='flex space-between wrap black'>
-          <Typography component='p' sx={{width:'100%',fontWeight:'600',fontSize:'1.12em'}} className='h1 black'>Leave us a message</Typography>
+         }} className='flex space-between wrap white'>
+          <Typography component='p' sx={{width:'100%',fontWeight:'600',fontSize:'1.12em'}} className='h1 white'>Leave us a message</Typography>
                <TextField 
               
               value={FullName}
 
               onChange={(e)=>setFullName(e?.target?.value)} 
               name={'FullName'} sx={{
-                color:'black',
-                borderColor:'black',
+                color:'white',
+                borderColor:'white'
+                ,'& .MuiInputBase-input': { // targets the input itself
+                  border:'1px solid white',
+                  color: 'white', // changes the color of the input text
+                },
                 width:'99%',py:1}} variant='filled' placeholder='Full Name'/>
            {/* <DatePicker name='StartDate' selected={startDate} onChange={(date:Date) => setStartDate(date)} /> */}
            {/* <DatePicker  name='EndDate' selected={endDate} onChange={(date:Date) => setEndDate(date)} /> */}
@@ -141,17 +145,37 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
   onChange={(newValue) => setDate2(`${newValue}`)}
 /> */}
              
-              <TextField name={'Email'} onChange={(e)=>setEmail(e?.target?.value)} variant='filled' sx={{width:'99%',py:1}} type='text' placeholder='Email Address'/>
+              <TextField name={'Email'}
+               onChange={(e)=>setEmail(e?.target?.value)} 
+               variant='filled' sx={{
+                '& .MuiInputBase-input': { // targets the input itself
+                  border:'1px solid white',
+                  color: 'white', // changes the color of the input text
+                },
+                width:'99%',py:1}} 
+               type='text' placeholder='Email Address'/>
               <TextField name={'Phone'} 
               value={Phone}
             type='number'
               onChange={(e)=>setPhone(e?.target?.value)} 
-              variant='filled' sx={{width:'99%',py:1,}} placeholder='Phone Number'/>
+              variant='filled' sx={{
+                '& .MuiInputBase-input': { // targets the input itself
+                  border:'1px solid white',
+                  color: 'white', // changes the color of the input text
+                },
+                width:'99%',py:1,}} placeholder='Phone Number'/>
               <TextField 
               value={Message}
               onChange={(e)=>setMessage(e?.target?.value)} 
               
-              name={'Message'} multiline={true} variant='filled' rows={4}  sx={{width:'99%',py:2}} placeholder='Message'/>
+              name={'Message'} 
+              variant='filled'   sx={{width:'99%',py:1,
+               
+               '& .MuiInputBase-input': { // targets the input itself
+                border:'1px solid white',
+                color: 'white', // changes the color of the input text
+              },
+               }} placeholder='Message'/>
               <Btn
 submit
    

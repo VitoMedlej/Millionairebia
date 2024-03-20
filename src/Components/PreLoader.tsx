@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation'
 // import Testimonials from './Testimonials/Testimonials'
 import Btn from './Btn/Btn'
 import useLanguage from '@/Hooks/useLanguage'
+import ContactSection from './ContactSection/ContactSection'
 // import { FacebookEmbed, InstagramEmbed } from 'react-social-media-embed'
 
 const 
@@ -342,6 +343,7 @@ Become a Member
 </Box> */}
 
 
+<ContactSection/>
 
   </Box>
   )
