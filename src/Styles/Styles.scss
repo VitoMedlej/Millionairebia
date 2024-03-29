@@ -22,6 +22,7 @@ body {
 $color : #070707 !important;
 $color2 : #c7ac7f !important;
 $color3 : black !important;
+$color4 : #0e1218 !important;
 .color3 {
     color: $color3;
 }
@@ -40,8 +41,20 @@ $color3 : black !important;
         object-fit: contain !important;
     }
 }
+.op0{
+    opacity:0
+} 
+.y10 {
+    transform: translateY(10px);
+}
+.y20 {
+    transform: translateY(15px);
+}
 .bg2 {
     background: $color2;
+}
+.bg3 {
+    background: $color4;
 }
 .borderColor {
     border-color: $color;

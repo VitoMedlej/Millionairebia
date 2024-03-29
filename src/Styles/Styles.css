@@ -45,8 +45,24 @@ body {
      object-fit: contain !important;
 }
 
+.op0 {
+  opacity: 0;
+}
+
+.y10 {
+  transform: translateY(10px);
+}
+
+.y20 {
+  transform: translateY(15px);
+}
+
 .bg2 {
   background: #c7ac7f !important;
+}
+
+.bg3 {
+  background: #0e1218 !important;
 }
 
 .borderColor {

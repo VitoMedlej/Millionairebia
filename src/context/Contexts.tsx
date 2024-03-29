@@ -1,6 +1,9 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react";
 import { loadState, saveState } from "@/Utils/LocalstorageFn";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {gsap} from 'gsap';
+
 
 
 export const DrawerContext = createContext < any > ({});
@@ -14,7 +17,7 @@ export const LangContext = createContext < any > ('en');
         children: React.ReactNode;
       }
       ) => {
-            const a = 421412;
+
         const [open,
             setOpen] = useState(false);
         const [cartOpen,
@@ -25,6 +28,7 @@ export const LangContext = createContext < any > ('en');
                     setLang] = useState('en');
                         // Load language from localStorage on component mount
     useEffect(() => {
+        
         const savedLang = loadState('Savedlanguage');
         if (savedLang) {
             setLang(savedLang);

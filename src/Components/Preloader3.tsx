@@ -8,9 +8,37 @@ import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
 import { Autoplay } from 'swiper';
 import Btn from './Btn/Btn';
-import useLanguage from '@/Hooks/useLanguage';
+import {gsap} from 'gsap';
 
 
+export const animateFn = (
+    className: string,
+    duration?: number,
+    delay?: number,
+    trigger?: { name?: string; start?: string; markers?: boolean } | boolean
+  ) => {
+    gsap.to(`.${className}`, {
+      opacity: 1,
+      y: 0,
+      delay: delay || 0,
+      duration: duration || 0.5,
+      markers: false,
+      scrollTrigger:
+        trigger === true
+          ? {
+              trigger: `.${className}`,
+              start: 'top 50%',
+              markers: false,
+            }
+          : trigger !== false && trigger !== undefined
+          ? {
+              trigger: `.${trigger?.name || className}`,
+              start: trigger?.start || 'top 50%',
+              markers: trigger?.markers || false,
+            }
+          : undefined, // Set scrollTrigger to undefined when trigger is not provided or is undefined
+    });
+  };
 
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
@@ -23,6 +51,9 @@ const Preloader3 = ({res}:{res:any}) => {
         router.push('/apply')
         // console.log('abc')
      }
+
+    
+  
     useEffect(() => {
         console.log('res: ', res);
     if (res && res?.MainCarousel && res?.MainCarousel?.length > 0) {
@@ -30,8 +61,16 @@ const Preloader3 = ({res}:{res:any}) => {
         // console.log('res: ', );
         setImgs(res?.MainCarousel)
     }
+
+    animateFn('title-1',.8,.15,false)
+
+    animateFn('sub-title-1',.5,.8,false)
+
+    animateFn('text-1',.5,1,false)
+
+    animateFn('btn-1',.5,1,false)
     }, [])
-  const {text} = useLanguage()
+
     
     return (
         <Box
@@ -93,19 +132,22 @@ const Preloader3 = ({res}:{res:any}) => {
                                 zIndex:123456,
                                 position:'absolute'}}>
                                                           <Typography 
-                                                          className='clr2 center text-center auto'
+                                                          className='clr2 op0 y10 sub-title-1   center text-center auto'
                                 sx={{fontWeight:700,fontSize:{xs:'1.185em',sm:'1.2em'},mt:1,maxWidth:'600px'}}>
                                    Welcome to Millionairebia
 
                                 </Typography>
                                 <Typography 
                                 
-                                sx={{color:'white',fontSize:{xs:'1.6em',sm:'3.1em',md:'3.65em',lg:'3.5em'},fontWeight:'900'}}>
+                                className='title-1 op0 y20'
+                                sx={{color:'white',
+                                fontSize:{xs:'1.6em',sm:'3.1em',md:'3.65em',
+                                lg:'3.5em'},fontWeight:'900'}}>
                              
                              Where Luxury Meets Success Worldwide
                                 </Typography>
                                 <Typography 
-                                className='center auto text-center'
+                                className='center op0 y10 text-1 auto text-center'
                                 sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'600px'}}>
                                  With a presence in 120 countries, we redefine luxury from boardrooms to breathtaking experiences.
 
@@ -115,9 +157,8 @@ const Preloader3 = ({res}:{res:any}) => {
                                 <Btn
                                 onClick={()=>redir()}
                                 
-                                className=' ' sx={{mx:'auto',mt:3}}>
+                                className='btn-1  op0 ' sx={{mx:'auto',mt:3}}>
                              Join Us
-
                                 </Btn>
                             
                                 </Box>

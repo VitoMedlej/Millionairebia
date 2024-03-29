@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box,  Container, Divider, Grid, TextField, Typography } from "@mui/material"
 // import ContactSection from './ContactSection/ContactSection'
 // import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
@@ -12,7 +12,10 @@ import { useRouter } from 'next/navigation'
 import Btn from './Btn/Btn'
 import useLanguage from '@/Hooks/useLanguage'
 import ContactSection from './ContactSection/ContactSection'
+import { animateFn } from './Preloader3'
 // import { FacebookEmbed, InstagramEmbed } from 'react-social-media-embed'
+import {gsap} from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const 
 PreLoader = ({data,resImages}:any) => {
@@ -40,7 +43,36 @@ PreLoader = ({data,resImages}:any) => {
   //     desc: text('Our extensive fleet includes business cars, SUVs, and family cars, ensuring you find the right vehicle for your specific needs.', 'تقدم مكملاتنا قيمة عظيمة للمال، حيث توفر لك أعلى جودة من المكونات بسعر معقول.')
   //   }
   // ];
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    
+// animateFn('img-1',1,0,{name:'img-1',start:'top 50%'})
+// animateFn('main-1',.7,.3,{name:'main-1',start:'50% 50%'})
+// animateFn('sub-1',.7,0.7,{name:'main-1',start:'50% 50%'})
+// animateFn('cont-1',.7,1,{name:'main-1',start:'50% 50%'})
+// animateFn('main-btn-1',.7,1,{name:'main-1',start:'50% 50%'})
+
+for (let i = 1; i <= 3; i++) {
+  animateFn(`img-${i}`, 1, 0, { name: `img-${i}`, start: 'top 50%' });
+  animateFn(`main-${i}`, 0.7, 0.3, { name: `main-${i}`, start: '50% 50%' });
+  animateFn(`sub-${i}`, 0.7, 0.7, { name: `main-${i}`, start: '50% 50%' });
+  animateFn(`cont-${i}`, 0.7, 1, { name: `main-${i}`, start: '50% 50%' });
+  animateFn(`main-btn-${i}`, 0.3, 1, { name: `main-${i}`, start: '50% 50%' });
+
   
+}
+
+animateFn(`t1`, .5, 0.2, { name: `t1`, start: 'top 50%' });
+animateFn(`i1`, 1, 0, { name: `i1`, start: 'top 50%' });
+animateFn(`p1`, .5, 0.4, { name: `t1`, start: 'top 50%' });
+animateFn(`t2`, 1, 0.6, { name: `t1`, start: 'top 50%' });
+
+
+
+
+
+}, [])
 
   return (
     <Box >
@@ -49,29 +81,31 @@ PreLoader = ({data,resImages}:any) => {
       <Grid sx={{py:16,px:2,maxWidth:'lg'}} className='auto' container>
            
       <Grid className='w100' item sm={12} md={5}>
-      <Box sx={{
+      <Box className='op0 y10 img-1' sx={{
                     width:'100%',
                     height:{xs:'300px',sm:'450px'}}}>
 
                 <img src="https://i.pinimg.com/originals/c3/3e/34/c33e34888f8bfb399894ec7560ad4acb.jpg" alt="" className="img" />
               </Box>
             </Grid>
+
             <Grid item sm={12} md={7}>
             <Container sx={{px:0}}>
 
             <Typography 
-                                                          className='clr2 '
+                                                          className='clr2 op0 main-1 y10 '
                                 sx={{fontWeight:700,fontSize:{xs:'1.185em',sm:'1.2em'},mt:1,maxWidth:'600px'}}>
                                  Where Boundaries Fade
                                 </Typography>
             <Typography   
-            className='white'
+            className='white op0 sub-1 y20'
                                 
                                 sx={{fontSize:{xs:'1.55em',sm:'2.1em',md:'3em',lg:'3em'},fontWeight:'900'}}>
                Unlock the World of Luxury
                 </Typography>
+
                 <Typography 
-                                className='white'
+                                className='white  op0 cont-1 y10'
                                 sx={{fontSize:{xs:'.85em',sm:'1em'},mt:1,maxWidth:'600px'}}>
               With Millionairebia&apos;s presence felt across continents, our private members club offers access to a tapestry of experiences that redefine opulence. Join our global community and unlock a lifestyle where every moment is an epitome of grandeur and achievement.
                 </Typography>
@@ -79,7 +113,7 @@ PreLoader = ({data,resImages}:any) => {
                 onClick={()=>router.push('/apply')}
                              
                                 
-                                className=' ' sx={{mt:3,mb:{xs:3,sm:0}}}>
+                                className=' main-btn-1 op0' sx={{mt:3,mb:{xs:3,sm:0}}}>
                                Apply Now
 
                                 </Btn>
@@ -96,26 +130,28 @@ PreLoader = ({data,resImages}:any) => {
 
      
                  <Typography 
-                                                               className='clr2 '
+                                                               className='clr2  op0 main-2 y10 '
                                      sx={{fontWeight:700,fontSize:{xs:'1.185em',sm:'1.2em'},mt:1,maxWidth:'600px'}}>
                                     Experience Opulence Redefined
                                      </Typography>
-                 <Typography   
-                 className='white'
+
+                 <Typography           className='white op0 sub-2 y20'
                                      
                                      sx={{fontSize:{xs:'1.55em',sm:'2.1em',md:'3em',lg:'3em'},fontWeight:'900'}}>
                    Exclusive Membership Opportunities
                      </Typography>
+
                      <Typography 
-                                     className='white'
+                                     className='white op0 cont-2 y10'
                                      sx={{fontSize:{xs:'.85em',sm:'1em'},mt:1,maxWidth:'600px'}}>
                 From lavish events to bespoke travel experiences, we invite you to indulge in the finer things life has to offer.
                      </Typography>
+
                      <Btn
                      onClick={()=>router.push('/apply')}
                                   
                                      
-                                     className=' ' sx={{mt:3,mb:{xs:3,sm:0}}}>
+                                     className='  main-btn-2 op0' sx={{mt:3,mb:{xs:3,sm:0}}}>
                                     Apply Now
      
                                      </Btn>
@@ -124,8 +160,8 @@ PreLoader = ({data,resImages}:any) => {
                  </Grid>
 
                             
-           <Grid className='w100' item sm={12} md={5}>
-                   <Box sx={{
+           <Grid className='w100 ' item sm={12} md={5}>
+                   <Box className='op0 y10 img-2' sx={{
                     width:'100%',
                     height:{xs:'300px',sm:'450px'}}}>
                      <img src="https://th.bing.com/th/id/OIP.yVIiRcUs7zNhmk3oPemLGAHaHa?rs=1&pid=ImgDetMain" alt="" className="img" />
@@ -138,7 +174,7 @@ PreLoader = ({data,resImages}:any) => {
              <Grid sx={{py:16,px:2,maxWidth:'lg'}} className='auto' container>
            
            <Grid className='w100' item sm={12} md={5}>
-           <Box sx={{
+           <Box className='op0 y10 img-3' sx={{
                          width:'100%',
                          height:{xs:'300px',sm:'450px',lg:'500px'}}}>
      
@@ -149,18 +185,19 @@ PreLoader = ({data,resImages}:any) => {
                  <Container sx={{px:0}}>
      
                  <Typography 
-                                                               className='clr2 '
+                                                               className='clr2 op0 main-3 y10'
                                      sx={{fontWeight:700,fontSize:{xs:'1.185em',sm:'1.2em'},mt:1,maxWidth:'600px'}}>
                                      Elevate Your Lifestyle
                                      </Typography>
-                 <Typography   
-                 className='white'
+                 <Typography    
+                 className='white op0 sub-3 y20'
                                      
                                      sx={{fontSize:{xs:'1.55em',sm:'2.1em',md:'3em',lg:'3em'},fontWeight:'900'}}>
                    Join Our Elite Community 
                      </Typography>
+
                      <Typography 
-                                     className='white'
+                                     className='white op0 cont-3 y10'
                                      sx={{fontSize:{xs:'.85em',sm:'1em'},mt:1,maxWidth:'600px'}}>
                   Whether you&apos;re a seasoned entrepreneur, a creative visionary, or a connoisseur of luxury, our club offers a platform where aspirations are nurtured, connections are forged, and dreams become reality.
                      </Typography>
@@ -168,7 +205,7 @@ PreLoader = ({data,resImages}:any) => {
                      onClick={()=>router.push('/apply')}
                                   
                                      
-                                     className=' ' sx={{mt:3,mb:{xs:3,sm:0}}}>
+                                     className=' main-btn-3 op0' sx={{mt:3,mb:{xs:3,sm:0}}}>
                                     Apply Now
      
                                      </Btn>
@@ -184,23 +221,25 @@ PreLoader = ({data,resImages}:any) => {
               px:{xs:1},
               py:4,my:4}} className=' auto center text-center'>
 
-<Typography className='clr2' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic'}}>
+<Typography className='clr2 op0 t1 y10' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic'}}>
 Become a Member
   </Typography>
-  <Typography className='white' sx={{fontWeight:800,fontSize:{xs:'2.5em',sm:'2em',md:'2.5em'}}}>
+  <Typography className='white op0 p1 y10' sx={{fontWeight:800,fontSize:{xs:'2.5em',sm:'2em',md:'2.5em'}}}>
   Join the Millionairebia Family
   </Typography>
-  <Typography className='white auto' sx={{pt:1,fontWeight:300,fontSize:{xs:'.88em',sm:'1em',md:'1em'},maxWidth:'800px'}}>
+  <Typography className='white auto op0 t2 y10' sx={{pt:1,fontWeight:300,fontSize:{xs:'.88em',sm:'1em',md:'1em'},maxWidth:'800px'}}>
   As a member, you gain exclusive access to our private club that spans across 120 countries. From boardrooms to breathtaking experiences, we offer opportunities that redefine luxury.
   </Typography>
   <Btn
+  className='op0 b1 y10'
   sx={{mt:2,mx:'auto'}}
   onClick={()=>router.push('/apply')}
   >
     Apply Now
   </Btn>
 </Container>
-<Container maxWidth='lg' sx={{height:{xs:'100%',sm:'500px'}}} className="auto">
+
+<Container maxWidth='lg' sx={{height:{xs:'100%',sm:'500px'}}} className="auto op0 i1 y20">
   <img src="https://th.bing.com/th/id/R.988b8a74860d28993d70fd137f90fa6d?rik=GuQgbxGaTzv6XQ&riu=http%3a%2f%2fwww.beautifullife.info%2fwp-content%2fuploads%2f2018%2f12%2f05%2fal_mirqab_yacht_photos.jpg&ehk=wkzhaD24Z6vMbQFvBC4LOVbuStlzRVuo2m3bcxEe1N8%3d&risl=&pid=ImgRaw&r=0" alt="" className="img" />
 </Container>
 
@@ -211,7 +250,7 @@ Become a Member
         Our Events
       </Typography>
       <Typography className='white' sx={{fontWeight:900,fontSize:'2.5em',maxWidth:'800px',fontStyle:'italic',textTransform:''}}>
-      Four signature events
+      Four sigMILL events
       </Typography>
       <Box sx={{mt:6}} className='flex wrap justify-around'>
           {

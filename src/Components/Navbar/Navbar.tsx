@@ -124,7 +124,9 @@ export default function Navbar() {
 
             <Box sx={{width:{xs:'97%',sm:'98%'}}} className="flex  items-center">
 
-              <Box className="start w100 flex" sx={{zIndex:'124124124'}}>
+              <Box className="start  flex" sx={{
+                width:'fit-content',
+                zIndex:'124124124'}}>
               <Typography 
               className='underline cursor pointer'
               sx={{color:'#833AB4',

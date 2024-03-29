@@ -11,7 +11,7 @@ const text = [
     With a passion for perfection and a keen eye for detail, Millionairebia has become a trusted name in the automotive industry. Our team of skilled technicians is dedicated to enhancing the appearance and performance of your vehicle, providing a comprehensive range of services tailored to meet the unique needs of each customer.
     `,
     `
-    What sets Millionairebia apart is our unwavering commitment to quality and customer satisfaction. We use state-of-the-art equipment and premium products to deliver outstanding results, whether you opt for our signature car wash, paint correction, or luxurious interior detailing services. Your satisfaction is our priority, and we go the extra mile to ensure your car leaves our spa looking pristine and rejuvenated.
+    What sets Millionairebia apart is our unwavering commitment to quality and customer satisfaction. We use state-of-the-art equipment and premium products to deliver outstanding results, whether you opt for our sigMILL car wash, paint correction, or luxurious interior detailing services. Your satisfaction is our priority, and we go the extra mile to ensure your car leaves our spa looking pristine and rejuvenated.
     `,
     `
     At Millionairebia, we understand that your vehicle is more than just a mode of transportation; it's a reflection of your personality and style. That's why we treat every car with the utmost care and attention, as if it were our own. Our team's expertise, combined with our passion for perfection, guarantees an unparalleled car spa experience that leaves a lasting shine.
