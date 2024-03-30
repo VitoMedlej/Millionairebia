@@ -65,12 +65,12 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       <ListItem
           sx={{fontWeight:600}}
 
-          onClick={()=>{router.push(`/rental/collection`); toggleDrawer(false)}}
+          onClick={()=>{router.push(`/blog`); toggleDrawer(false)}}
            disablePadding>
               <ListItemButton sx={{py:1.5}} >
             
                   <Typography sx={{fontWeight:600}}>
-              All Cars
+              Our Articles
             </Typography>
             </ListItemButton>
   
@@ -107,12 +107,12 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
           <ListItem
           sx={{fontWeight:600}}
 
-          onClick={()=>{router.push(`/gallery`); toggleDrawer(false)}}
+          onClick={()=>{router.push(`/#contactSection`); toggleDrawer(false)}}
            disablePadding>
               <ListItemButton sx={{py:1}} >
             
                   <Typography sx={{fontWeight:600}}>
-             Gallery
+             Contact
             </Typography>
             </ListItemButton>
   

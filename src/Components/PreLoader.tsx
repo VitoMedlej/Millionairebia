@@ -21,6 +21,36 @@ const
 PreLoader = ({data,resImages}:any) => {
   const router= useRouter();
   const [email,setEmail] = useState('')
+const [Message, setMessage] = useState('')
+
+  const subscribe = async () => {
+    try {
+
+      if (!email) return;
+    
+let url = `${process.env.NEXT_PUBLIC_URL}/api/subscribe`;
+
+    const rawResponse = await fetch(url, {
+      method: 'POST',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({email})
+  });
+      const res = await rawResponse.json();
+  
+      console.log('res: ', res);
+      setMessage(res?.success ? 'Thank you for your submission! You are now subscribed to The Millionairebia’s Club newsletters.' : 'Failed to subscribe!')
+      setEmail('')
+    }
+    catch(e) {
+      console.log('e: ', e);
+      setMessage('Failed to subscribe!')
+      setEmail('')
+
+    }
+    }
   // const textsArray = [
   //   {
   //     id: 1,
@@ -57,21 +87,21 @@ for (let i = 1; i <= 3; i++) {
   animateFn(`img-${i}`, 1, 0, { name: `img-${i}`, start: 'top 50%' });
   animateFn(`main-${i}`, 0.7, 0.2, { name: `main-${i}`, start: '50% 50%' });
   animateFn(`sub-${i}`, 0.7, 0.4, { name: `main-${i}`, start: '50% 50%' });
-  animateFn(`cont-${i}`, 0.7, 8, { name: `main-${i}`, start: '50% 50%' });
+  animateFn(`cont-${i}`, 0.5, .8, { name: `main-${i}`, start: '50% 50%' });
   animateFn(`main-btn-${i}`, 0.22, 1, { name: `main-${i}`, start: '50% 50%' });
 }
 animateFn(`t4`, 0.5, 0.3, { name: `t4`, start: 'top 50%' });
 animateFn(`t5`, 0.5, 0.3, { name: `t4`, start: 'top 50%' });
 
 for (let i = 0; i < 4; i++) {
-  animateFn(`trip-${i}`, 1, .3, { name: `trip-${i}`, start: 'top 50%' },.2);
+  animateFn(`trip-${i}`, 1, Number(.07 * Number(i)) , { name: `trip-${i}`, start: 'top 50%' },.4);
 }
 
 
 animateFn(`t1`, .5, 0.2, { name: `t1`, start: 'top 50%' });
 animateFn(`i1`, 1, 0, { name: `i1`, start: 'top 50%' });
 animateFn(`p1`, .5, 0.4, { name: `t1`, start: 'top 50%' });
-animateFn(`t2`, 1, 0.6, { name: `t1`, start: 'top 50%' });
+animateFn(`t2`, .5, 0.6, { name: `t1`, start: 'top 50%' });
 
 
 
@@ -298,12 +328,22 @@ Become a Member
       
    
    <Container maxWidth='lg' sx={{pb:16,pt:4,px:{xs:1}}}>
-   <Typography className='clr2' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic',pt:{xs:8,sm:10},pb:1}}>
+{ !Message && Message?.length < 1 &&
+<>
+
+<Typography className='clr2' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic',pt:{xs:8,sm:10},pb:1}}>
         Subscribe to Our Newsletters
       </Typography>
-      <Typography className='white' sx={{fontWeight:700,fontSize:'2em',fontStyle:'italic',textTransform:''}}>
+      <Typography className='white' sx={{fontWeight:700,fontSize:'1.5em',fontStyle:'',textTransform:''}}>
       Get The Millionairebia&apos;s Club newsletters to enjoy discounts to our partners products, and services.
+          
       </Typography>
+</>
+      
+      }
+      {Message?.length > 1 && <Typography sx={{color:'white',fontWeight:700,fontSize:'2em',fontStyle:'italic',textTransform:''}}>
+        {Message}
+      </Typography>}
       <TextField 
        name={'Email'} value={email} onChange={(e)=>setEmail(e?.target?.value)} 
        variant='filled' sx={{width:'99%',py:1
@@ -312,7 +352,7 @@ Become a Member
         color: 'white', // changes the color of the input text
       }
        }} type='text' placeholder='Email Address'/>
-       <Btn sx={{mx:'auto',mt:2}}>
+       <Btn disabled={!email || email?.length < 3} onClick={()=>subscribe()} sx={{mx:'auto',mt:2}}>
         Subscribe
        </Btn>
    </Container>

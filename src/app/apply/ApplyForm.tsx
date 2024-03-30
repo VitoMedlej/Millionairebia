@@ -30,7 +30,7 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
     setStatus(400)
     return;
   }
-  window.open(url);
+  // window.open(url);
 
   const rawResponse = await fetch(url, {
     method: 'POST',
@@ -38,12 +38,14 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({user:{FullName,Phone,email,Message}})
+    body: JSON.stringify({applicant:{FullName,Phone,email,Message}})
 });
-    const res = await rawResponse
+    const res = await rawResponse.json();
+
     console.log('res: ', res);
-    setStatus(res ? res?.status : 400)
-    if (res?.status && form?.current) {
+    setStatus(res?.success ? 200 : 400)
+
+    if (res?.success && form?.current) {
       form?.current?.reset()
       setFullName('')
       setPhone('')
@@ -63,19 +65,30 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
     <Box className='flex auto w100'>
        
         </Box>
-      
+        <Box className='center auto text-center' sx={{
+          display: status === 200 ? 'none' : 'block'
+          ,
+          pb:2}}>
+          <Typography className='clr2' sx={{fontSize:'2em',fontWeight:800}}>
+            Welcome
+          </Typography>
+          <Typography className='auto text-center' sx={{maxWidth:'400px',fontSize:'.85em',fontWeight:400}}>
+          To initiate your membership application, kindly complete the provided forms below and click on "Apply"
+          </Typography>
+      </Box>
    
 
         <Grid sx={{
           // background:'white',
        }} className='auto col center flex' item xs={12} sm={12} >
-          <Typography component='h1' sx={{color:'green',fontWeight:'500',textAlign:'center'}} 
-          className='p'>{status === 200 ? 'Message Sent Successfully!' : ""}</Typography>
+          <Typography component='h1' sx={{color:'white',fontWeight:'500',textAlign:'center'}} 
+          className='p'>{status === 200 ? 'Thank you for your application! We have received your membership request. You will receive a confirmation email shortly. We appreciate your interest and look forward to welcoming you as a member.' : ""}</Typography>
             <Box ref={form} onSubmit={(e : any)=>sendMessage(e)} component='form' sx={{gap:1,
           margin : '0 auto',
+          display: status === 200 ? 'none' : 'flex'
         //   maxWidth:'sm',
             
-         }} className='flex space-between wrap white'>
+         }} className=' space-between wrap white'>
                <TextField 
               
               value={FullName}

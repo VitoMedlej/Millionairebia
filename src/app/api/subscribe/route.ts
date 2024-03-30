@@ -5,12 +5,12 @@ import { type NextRequest } from 'next/server'
 
 export  async function POST(req: NextRequest, res: NextApiResponse) {
   // const applicant = req?.body.get('applicant')
-  const {applicant} = await req.json()
-  console.log('applicant: ', applicant);
+  const {email} = await req.json()
+  console.log('applicant: ', email);
   if (req.method === 'POST') {
     // Process a POST request
-    if (!applicant) return NextResponse.json({success:false})
-       const insertReq = await client.db("MILL").collection("Applicants").insertOne(applicant);
+    if (!email) return NextResponse.json({success:false})
+       const insertReq = await client.db("MILL").collection("EmailList").insertOne({email});
        if (insertReq?.acknowledged) {         
          return NextResponse.json({success:true});
         }

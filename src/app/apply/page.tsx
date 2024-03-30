@@ -14,14 +14,7 @@ const page = () => {
       px:{xs:2},py:6,textAlign:'center',color:'white',width:{xs:'90%',sm:'50%'}}} 
     
     className='relative bg3 auto '>
-      <Box className='center auto text-center' sx={{pb:2}}>
-          <Typography className='clr2' sx={{fontSize:'2em',fontWeight:800}}>
-            Welcome
-          </Typography>
-          <Typography className='auto text-center' sx={{maxWidth:'400px',fontSize:'.85em',fontWeight:400}}>
-            To apply for a membership, please fill in the forms below and click submit.
-          </Typography>
-      </Box>
+ 
           <ApplyForm></ApplyForm>
     </Box>
     </Box>

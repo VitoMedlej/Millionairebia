@@ -230,9 +230,9 @@ Register
 
 <Btn
 sx={{background:'black'}}
-                            onClick={()=>router.push('/#contactsection')}
+                            onClick={()=>router.push('/apply')}
                             >
-                                Contact Us
+                                Apply Now
                             </Btn>
                                 </Box>
 
