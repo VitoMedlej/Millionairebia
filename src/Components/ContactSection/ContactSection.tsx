@@ -58,7 +58,7 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
   
     <Grid id='contactsection' container maxWidth='lg'  className='auto'  sx={{
       // background:'white',
-      pt:20,pb:5}}>
+      pt:8,pb:5}}>
     <Box className='flex auto w100'>
        
                 {/* <Divider></Divider> */}

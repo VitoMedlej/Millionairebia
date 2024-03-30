@@ -55,13 +55,18 @@ PreLoader = ({data,resImages}:any) => {
 
 for (let i = 1; i <= 3; i++) {
   animateFn(`img-${i}`, 1, 0, { name: `img-${i}`, start: 'top 50%' });
-  animateFn(`main-${i}`, 0.7, 0.3, { name: `main-${i}`, start: '50% 50%' });
-  animateFn(`sub-${i}`, 0.7, 0.7, { name: `main-${i}`, start: '50% 50%' });
-  animateFn(`cont-${i}`, 0.7, 1, { name: `main-${i}`, start: '50% 50%' });
-  animateFn(`main-btn-${i}`, 0.3, 1, { name: `main-${i}`, start: '50% 50%' });
-
-  
+  animateFn(`main-${i}`, 0.7, 0.2, { name: `main-${i}`, start: '50% 50%' });
+  animateFn(`sub-${i}`, 0.7, 0.4, { name: `main-${i}`, start: '50% 50%' });
+  animateFn(`cont-${i}`, 0.7, 8, { name: `main-${i}`, start: '50% 50%' });
+  animateFn(`main-btn-${i}`, 0.22, 1, { name: `main-${i}`, start: '50% 50%' });
 }
+animateFn(`t4`, 0.5, 0.3, { name: `t4`, start: 'top 50%' });
+animateFn(`t5`, 0.5, 0.3, { name: `t4`, start: 'top 50%' });
+
+for (let i = 0; i < 4; i++) {
+  animateFn(`trip-${i}`, 1, .3, { name: `trip-${i}`, start: 'top 50%' },.2);
+}
+
 
 animateFn(`t1`, .5, 0.2, { name: `t1`, start: 'top 50%' });
 animateFn(`i1`, 1, 0, { name: `i1`, start: 'top 50%' });
@@ -246,10 +251,10 @@ Become a Member
 
 
     <Container sx={{py:4,maxWidth:'lg'}}>
-    <Typography className='clr2' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic',pt:{xs:8,sm:10},pb:1,maxWidth:'800px',}}>
+    <Typography className='clr2 t4 y10 op0' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic',pt:{xs:8,sm:10},pb:1,maxWidth:'800px',}}>
         Our Events
       </Typography>
-      <Typography className='white' sx={{fontWeight:900,fontSize:'2.5em',maxWidth:'800px',fontStyle:'italic',textTransform:''}}>
+      <Typography className='white t5 y10 op0' sx={{fontWeight:900,fontSize:'2.5em',maxWidth:'800px',fontStyle:'italic',textTransform:''}}>
       Four sigMILL events
       </Typography>
       <Box sx={{mt:6}} className='flex wrap justify-around'>
@@ -272,8 +277,8 @@ Become a Member
                 title:`Monaco`,
                 img:`https://lirp.cdn-website.com/05b938f9/dms3rep/multi/opt/joachim-lesne-IF9KinCYXkI-unsplash-607h.jpg`
               }
-            ].map(i=>{
-              return <Box className='relative cursor pointer'
+            ].map((i,index)=>{
+              return <Box className={`relative cursor pointer y10 op0 trip-${index}`}
               onClick={()=>router.push(`/apply?id=${encodeURIComponent(i?.title.toLowerCase())}`)}
               key={i.title} sx={{my:1,minWidth:{sm:'auto',md:'250px'},height:'300px',width:{xs:'49%',sm:'48%',md:'24%'}}}>
                 <Box sx={{height:'100%'}}>

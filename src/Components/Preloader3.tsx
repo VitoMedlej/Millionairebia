@@ -15,7 +15,8 @@ export const animateFn = (
     className: string,
     duration?: number,
     delay?: number,
-    trigger?: { name?: string; start?: string; markers?: boolean } | boolean
+    trigger?: { name?: string; start?: string; markers?: boolean } | boolean,
+     stagger ?: number
   ) => {
     gsap.to(`.${className}`, {
       opacity: 1,
@@ -23,6 +24,8 @@ export const animateFn = (
       delay: delay || 0,
       duration: duration || 0.5,
       markers: false,
+      stagger : stagger || 0,
+    
       scrollTrigger:
         trigger === true
           ? {
