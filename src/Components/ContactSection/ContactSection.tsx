@@ -21,11 +21,10 @@ const Index = () => {
       const [Phone, setPhone] = useState('')
 const [FullName, setFullName] = useState('')
 const [Message, setMessage] = useState('')
-let message = `Hello my name is ${FullName}. My phone number is ${Phone}. I am interested in your club.`;
 
-let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent(message)}`;
+
+let url = `${process.env.NEXT_PUBLIC_URL}/api/send-message`;
   const sendMessage = async(e : any) => {
-
 
     e.preventDefault();
     if (!form.current) 
@@ -35,18 +34,27 @@ let url = `https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=${encodeURIComponent
     setStatus(400)
     return;
   }
-  window.open(url);
+  // window.open(url);
 
-//     const req = await emailjs.sendForm(`service_i9h8mw5`, 'template_hml9w5k', form.current, 'YUsR8yA3kMr0Gmz1j')
-//     const res = await req
-//     console.log('res: ', res);
-//     setStatus(res ? res?.status : 400)
-//     if (res?.status && form?.current) {
-//       form?.current?.reset()
-//       setFullName('')
-//     setPhone('')
-//     setMessage('')
-// }
+  const rawResponse = await fetch(url, {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({message:{FullName,Phone,email,Message}})
+});
+    const res = await rawResponse.json();
+
+    console.log('res: ', res);
+    setStatus(res?.success ? 200 : 400)
+
+    if (res?.success && form?.current) {
+      form?.current?.reset()
+      setFullName('')
+      setPhone('')
+      setMessage('')
+}
 };
 
   return (

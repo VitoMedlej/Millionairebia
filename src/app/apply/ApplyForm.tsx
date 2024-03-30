@@ -73,7 +73,7 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
             Welcome
           </Typography>
           <Typography className='auto text-center' sx={{maxWidth:'400px',fontSize:'.85em',fontWeight:400}}>
-          To initiate your membership application, kindly complete the provided forms below and click on "Apply"
+          To initiate your membership application, kindly complete the provided forms below and click on &quot;Apply&quot;
           </Typography>
       </Box>
    
