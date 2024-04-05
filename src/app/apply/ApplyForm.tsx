@@ -15,6 +15,13 @@ const Index = () => {
       setStatus] = useState(0)
   const [email,
       setEmail] = useState('')
+      const [country,
+        setCountry] = useState('')
+        const [company,
+          setcompany] = useState('')
+          const [position,
+            setPosition] = useState('')
+        
       const [Phone, setPhone] = useState('')
 const [FullName, setFullName] = useState('')
 const [Message, setMessage] = useState('')
@@ -114,7 +121,42 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
   label="Controlled picker"
   value={date2}
   onChange={(newValue) => setDate2(`${newValue}`)}
-/> */}
+/> */}         
+ <TextField 
+value={country}
+onChange={(e)=>setCountry(e?.target?.value)} 
+name={'country'} sx={{
+  color:'white',
+  borderColor:'white'
+  ,'& .MuiInputBase-input': { 
+    border:'1px solid white',
+    color: 'white', 
+  },
+  width:'99%',py:1}} variant='filled' placeholder='Country'/>
+
+<TextField 
+value={company}
+onChange={(e)=>setcompany(e?.target?.value)} 
+name={'company'} sx={{
+  color:'white',
+  borderColor:'white'
+  ,'& .MuiInputBase-input': { 
+    border:'1px solid white',
+    color: 'white', 
+  },
+  width:'99%',py:1}} variant='filled' placeholder='Company Name'/>
+
+<TextField 
+value={position}
+onChange={(e)=>setPosition(e?.target?.value)} 
+name={'position'} sx={{
+  color:'white',
+  borderColor:'white'
+  ,'& .MuiInputBase-input': { 
+    border:'1px solid white',
+    color: 'white', 
+  },
+  width:'99%',py:1}} variant='filled' placeholder='Position'/>
              
               <TextField name={'Email'}
                onChange={(e)=>setEmail(e?.target?.value)} 
@@ -125,6 +167,8 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
                 },
                 width:'99%',py:1}} 
                type='text' placeholder='Email Address'/>
+
+
               <TextField name={'Phone'} 
               value={Phone}
             type='number'
@@ -135,6 +179,8 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
                   color: 'white', // changes the color of the input text
                 },
                 width:'99%',py:1,}} placeholder='Phone Number'/>
+
+
               <TextField 
               value={Message}
               onChange={(e)=>setMessage(e?.target?.value)} 
@@ -146,7 +192,7 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
                 border:'1px solid white',
                 color: 'white', // changes the color of the input text
               },
-               }} placeholder='Message'/>
+               }} placeholder='Comment Box'/>
               <Btn
 submit
    
