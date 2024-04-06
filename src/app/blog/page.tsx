@@ -1,9 +1,9 @@
 "use client"
 import Btn from '@/Components/Btn/Btn';
+import { server } from '@/Utils/Server';
 import { Box, Container, Typography } from '@mui/material'
 import { useRouter } from 'next/navigation';
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
 
 
  const postsArray = [
@@ -32,9 +32,32 @@ import React from 'react'
   ];
 
 
-const Index = () => {
+  const Index = () => {
     const router = useRouter()
+    const [data,setData] = useState<any>(null)
+    console.log('data: ', data);
+    
+    const fetchPosts = async () => {
+      try {
+        const req = await fetch(`${server}/api/get-posts`,{ next: { revalidate: 400 } })
+              const res = await req.json()
+              console.log('res: ', res);
+            
+              if (res?.success && res?.data) {
+                setData(res?.data?.featuredProducts)
+              }
+              return null
+      } 
+      catch (e) {
+        console.log('e: ', e);
+  
+      }
+    }
 
+    useEffect(() => {
+       fetchPosts()
+    }, [])
+    
   return (
     <Container sx={{py:12,maxWidth:'lg'}}>
         <Typography component='h1'
@@ -43,15 +66,15 @@ const Index = () => {
         Latest from Our Blog
         </Typography>
         <Box className='wrap row flex justify-between space-between gap'>
-        {postsArray && postsArray.map(i=>{
+        {data && data?.length > 0 && data?.map((i:any)=>{
 
-return <Box key={i.id} className='shadow' sx={{maxWidth:'400px',my:1,width:{xs:'99%',sm:'48%',md:'32%'},}}>
+return <Box key={i?._id} className='shadow' sx={{maxWidth:'400px',my:1,width:{xs:'99%',sm:'48%',md:'32%'},}}>
                <Box sx={{width:'100%',height:'260px'}}>
-                   <img style={{borderRadius:'4px'}} src={i.img} alt="Blog Post Image" className="img" />
+                   <img style={{borderRadius:'4px'}} src={i?.images[0]} alt="Blog Post Image" className="img" />
                </Box>
                <Box sx={{px:1}}>
                <Typography className='clr2' sx={{ pt: '.25em', fontWeight: '600', fontSize: '.8em' }}>
-     {i.tags.map((word, index) => (
+     {i?.tags?.map((word : any, index: any) => (
        <React.Fragment key={index}>
          {index > 0 && ' • '}
          {word}
@@ -60,7 +83,7 @@ return <Box key={i.id} className='shadow' sx={{maxWidth:'400px',my:1,width:{xs:'
    </Typography>
                    <Typography
                    
-                   onClick={()=>router.push(`/blog/${i.id}?title=${i.title.replaceAll(' ', '-')}`)}
+                   onClick={()=>router.push(`/blog/${i?._id}?title=${i?.title.replaceAll(' ', '-')}`)}
                    className='pointer white' sx={{fontWeight:'700',fontSize:{xs:'1.05em',sm:'1.15em',md:'1.25em'}}}>
                        {i.title}
                    </Typography>

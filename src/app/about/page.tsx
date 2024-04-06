@@ -5,32 +5,23 @@ import React from 'react'
 
 const text = [
     `
-    Welcome to Millionairebia, your premier destination for professional automotive care in Lebanon. At Shine Plus, we take pride in our commitment to delivering exceptional car spa services, ensuring your vehicle receives the royal treatment it deserves.
+    Welcome to Millionairebia, where luxury meets distinction, and success finds its home. Established as a premier enclave within the vibrant tapestry of the Arab region, Millionairebia stands as a testament to opulence, sophistication, and unparalleled exclusivity.
 `,
     `
-    With a passion for perfection and a keen eye for detail, Millionairebia has become a trusted name in the automotive industry. Our team of skilled technicians is dedicated to enhancing the appearance and performance of your vehicle, providing a comprehensive range of services tailored to meet the unique needs of each customer.
+    Our mission is simple: to provide a sanctuary where individuals of substantial means can come together to network, socialize, and celebrate their shared success. Whether it's forging new connections, exploring lucrative business opportunities, or simply indulging in the finer things in life, Millionairebia offers a haven for those who demand nothing but the best.
+
+
     `,
     `
-    What sets Millionairebia apart is our unwavering commitment to quality and customer satisfaction. We use state-of-the-art equipment and premium products to deliver outstanding results, whether you opt for our sigMILL car wash, paint correction, or luxurious interior detailing services. Your satisfaction is our priority, and we go the extra mile to ensure your car leaves our spa looking pristine and rejuvenated.
+    As we continue to evolve and grow, our commitment to excellence remains unwavering. We invite you to join us on this extraordinary journey, where every moment is an opportunity to elevate your lifestyle and embrace the extraordinary. Welcome to Millionairebia – where luxury knows no bounds.
     `,
-    `
-    At Millionairebia, we understand that your vehicle is more than just a mode of transportation; it's a reflection of your personality and style. That's why we treat every car with the utmost care and attention, as if it were our own. Our team's expertise, combined with our passion for perfection, guarantees an unparalleled car spa experience that leaves a lasting shine.
-    `,
-    `
-    As a Lebanese brand, we take pride in contributing to the local automotive community. We strive to set new standards in car care, combining traditional Lebanese hospitality with cutting-edge techniques to provide an unmatched level of service.
- `,
-    `
-    Experience the difference at Millionairebia – where your car's beauty meets our expertise. Trust us to pamper your vehicle, and we promise to exceed your expectations, leaving you with a car that shines brighter than ever before.
-    `,
-`    
-    Thank you for choosing Millionairebia – Your Car's Sanctuary in Lebanon.`
-  
+
 ]
 const Index = () => {
   return (
-    <Container maxWidth='lg' className='auto' sx={{mx:1,py:4}}>
-           <Typography component='h1' sx={{mb:1,mx:'auto',fontSize:'3.5em',fontStyle:'italic',fontWeight:'900'}} className=" center text-center">
-            ABOUT US - Shine Plus
+    <Container maxWidth='lg' className='auto white' sx={{mx:1,py:4}}>
+           <Typography component='h1' sx={{color:'white',mb:1,mx:'auto',fontSize:'3.5em',fontStyle:'italic',fontWeight:'900'}} className=" center text-center">
+            ABOUT US - Millionairebia
         </Typography>
         
         {/* <Box sx={{width:'100%',height:'400px'}}>

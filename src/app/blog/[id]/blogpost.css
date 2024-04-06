@@ -1,0 +1,15 @@
+.blog {
+  color: white;
+}
+.blog p {
+  font-weight: 300;
+  line-height: 1.4em;
+  font-size: 0.95em;
+  color: rgb(245, 245, 245);
+}
+.blog p img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=blogpost.css.map */

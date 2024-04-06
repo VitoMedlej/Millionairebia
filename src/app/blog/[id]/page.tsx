@@ -1,27 +1,56 @@
 "use client"
+import { server } from '@/Utils/Server'
 import { Box, Container, Typography } from '@mui/material'
-import React from 'react'
+import { useParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
+import  './blogpost.css'
 
 const Index = () => {
-    const data = {
-        description :''
+  const router = useRouter()
+  const [data,setData] = useState<any>(null)
+  const {id} = useParams()
+  console.log('data: ', data);
+  console.log('id: ', id);
+
+
+  const fetchPosts = async () => {
+    try {
+      const req = await fetch(`${server}/api/get-post-by-id?id=${id}`,{ cache: 'no-store' })
+
+            const res = await req.json()
+            console.log('res: ', res);
+          
+            if (res?.success && res?.product) {
+              setData(res?.product)
+            }
+            return null
+    } 
+    catch (e) {
+      console.log('e: ', e);
+
     }
-    const {description} = data
+  }
+
+  useEffect(() => {
+     fetchPosts()
+  }, [])
+
   return (
-    <Container sx={{px:{xs:1,sm:1.5},py:8}} >
+    <Container className={'blog '} sx={{px:{xs:1,sm:1.5},py:8}} >
         <Box sx={{color:'white',pb:2}}>
-                <Typography sx={{fontWeight:900,fontSize:{xs:'1.55em',sm:'1.7em'}}}>
+                <Typography component='h1' sx={{fontWeight:900,fontSize:{xs:'1.55em',sm:'1.7em'}}}>
                 Step into the Extravagance of MillionaireBia: Where Luxury Knows No Bounds
                 </Typography>
         </Box>
         <Box sx={{height:{xs:'300px',sm:'500px'}}}>
-            <img src="https://th.bing.com/th/id/OIP.h1V8JR6KtYHM-XWUW1678AHaEK?rs=1&pid=ImgDetMain" alt="" className="img" />
+            <img src={data?.images[0]} alt="" className="img" />
         </Box>
         <Box>
-        <Typography 
-      className='gray' 
-      sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}
-      dangerouslySetInnerHTML={{ __html: description }}
+        <main 
+      className='gray blog' 
+      style={{whiteSpace:'pre-wrap',maxWidth:'100%'}}
+      dangerouslySetInnerHTML={{ __html: data?.description }}
     />
         </Box>
     </Container>
