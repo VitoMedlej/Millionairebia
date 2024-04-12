@@ -205,7 +205,7 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Contact
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/apply`}>
+<Link className='white decor-none ' href={`/about`}>
 
 <Typography 
 className=' cursor center white  gap1 white decor-none captialize'
@@ -217,7 +217,7 @@ mx:'1em',
 alignItems: 'center',
 
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Register
+About
 </Typography>
 </Link>
 </Box>

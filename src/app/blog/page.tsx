@@ -98,7 +98,7 @@ return <Box key={i?._id} className='shadow' sx={{maxWidth:'400px',my:1,width:{xs
                        </Typography>
                    </Btn>
                <Typography className='white' sx={{fontWeight:'300',fontSize:'.75em'}}>
-                       {i.date} | OnBeirut 
+                       {i.date} | Millionairebia 
                    </Typography>
                </Box>
            </Box>

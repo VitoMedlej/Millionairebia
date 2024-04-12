@@ -1,10 +1,8 @@
 "use client"
 import {  Container,Box, Grid, TextField, Typography } from '@mui/material'
 import React, { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser';
 import Btn from '@/Components/Btn/Btn'
 import {CiLocationOn} from 'react-icons/ci'
-import Perks from '../Perks/Perks';
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
 
@@ -106,7 +104,7 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/send-message`;
   <CiLocationOn/>
         <Typography sx={{my:2,fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
-        Beirut / Hadath
+        Beirut / Lebanon
         </Typography>
   </a>
   

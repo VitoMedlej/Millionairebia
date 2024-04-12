@@ -9,6 +9,7 @@ import  './blogpost.css'
 const Index = () => {
   const router = useRouter()
   const [data,setData] = useState<any>(null)
+  console.log('data: ', data);
   const {id} = useParams()
   console.log('data: ', data);
   console.log('id: ', id);
@@ -35,12 +36,12 @@ const Index = () => {
   useEffect(() => {
      fetchPosts()
   }, [])
-
+  if (!data) return <></>;
   return (
     <Container className={'blog '} sx={{px:{xs:1,sm:1.5},py:8}} >
         <Box sx={{color:'white',pb:2}}>
-                <Typography component='h1' sx={{fontWeight:900,fontSize:{xs:'1.55em',sm:'1.7em'}}}>
-                Step into the Extravagance of MillionaireBia: Where Luxury Knows No Bounds
+                <Typography component='h1' sx={{py:5,fontWeight:900,fontSize:{xs:'1.55em',sm:'1.7em',md:'2.5em'}}}>
+               {data?.title}
                 </Typography>
         </Box>
         <Box sx={{height:{xs:'300px',sm:'500px'}}}>

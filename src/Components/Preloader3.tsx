@@ -55,15 +55,12 @@ const Preloader3 = ({res}:{res:any}) => {
         // console.log('abc')
      }
 
-    
+  
   
     useEffect(() => {
-        console.log('res: ', res);
-    if (res && res?.MainCarousel && res?.MainCarousel?.length > 0) {
-        console.log('res?.MainCarousel: ', res?.MainCarousel);
-        // console.log('res: ', );
-        setImgs(res?.MainCarousel)
-    }
+        if (res) {
+            setImgs(res)
+        }
 
     animateFn('title-1',.8,.15,false)
 

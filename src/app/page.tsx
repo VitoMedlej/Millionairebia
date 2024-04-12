@@ -1,14 +1,23 @@
 
-"use client"
+// "use client"
 import PreLoader from "@/Components/PreLoader"
 // import { server } from "@/Utils/Server"
 // import { IProduct } from "@/Types/Types"
 // import { server } from "@/Utils/Server"
 // import { Box,  Container, Typography } from "@mui/material"
 // import { useEffect, useState } from "react"
-// https://www..com/view_video.php?viewkey=ph637450f5f16fd
-// export default async function Home() {
-  export default function Home() {
+
+
+const fetchDataAndSetImgs = async () => {
+  const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-images`,
+  // {cache: 'no-store',next:{revalidate:0} })
+  {next:{revalidate:1000} })
+  let res = req &&  await req.json();
+  if (res?.success && res?.data?.Images) return res
+  return null;
+}
+export default async function Home() {
+  // export default function Home() {
 //   const [data,setData] = useState< {
 //     products: IProduct[] | never[] ; 
 //     featuredProducts:IProduct[] | never[];
@@ -38,7 +47,16 @@ import PreLoader from "@/Components/PreLoader"
 //     InitialFetch()
 
 //   }, [])
-return <PreLoader />
+const imgs = await fetchDataAndSetImgs()
+
+try {
+  return <PreLoader imgs={imgs} />
+
+}
+catch(e) {
+  return <PreLoader imgs={null} />
+
+}
     
 
 

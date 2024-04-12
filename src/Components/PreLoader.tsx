@@ -10,7 +10,6 @@ import { useRouter } from 'next/navigation'
 // import FullscreenPoster from './FullscreenPoster/FullscreenPoster'
 // import Testimonials from './Testimonials/Testimonials'
 import Btn from './Btn/Btn'
-import useLanguage from '@/Hooks/useLanguage'
 import ContactSection from './ContactSection/ContactSection'
 import { animateFn } from './Preloader3'
 // import { FacebookEmbed, InstagramEmbed } from 'react-social-media-embed'
@@ -18,7 +17,7 @@ import {gsap} from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const 
-PreLoader = ({data,resImages}:any) => {
+PreLoader = ({data,imgs}:any) => {
   const router= useRouter();
   const [email,setEmail] = useState('')
 const [Message, setMessage] = useState('')
@@ -111,7 +110,7 @@ animateFn(`t2`, .5, 0.6, { name: `t1`, start: 'top 50%' });
 
   return (
     <Box >
-      <MainCarousel resImages={resImages}/>
+      <MainCarousel res={imgs}/>
     
       <Grid sx={{py:16,px:2,maxWidth:'lg'}} className='auto' container>
            
