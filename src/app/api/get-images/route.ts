@@ -34,4 +34,4 @@ catch (error) {
 }
 }
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
