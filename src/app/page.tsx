@@ -9,12 +9,21 @@ import PreLoader from "@/Components/PreLoader"
 
 
 const fetchDataAndSetImgs = async () => {
+  try {
+
+  
   const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-images`,
   // {cache: 'no-store',next:{revalidate:0} })
   {next:{revalidate:1000} })
   let res = req &&  await req.json();
   if (res?.success && res?.data?.Images) return res
   return null;
+}
+catch(e) {
+  console.log('e: fetch images', e);
+  return null;
+
+}
 }
 export default async function Home() {
   // export default function Home() {
