@@ -39,7 +39,7 @@ import React, { useEffect, useState } from 'react'
     
     const fetchPosts = async () => {
       try {
-        const req = await fetch(`${server}/api/get-posts`,{ next: { revalidate: 400 } })
+        const req = await fetch(`${server}/api/get-posts`,{ next: { revalidate: 0 } })
               const res = await req.json()
               console.log('res: ', res);
             

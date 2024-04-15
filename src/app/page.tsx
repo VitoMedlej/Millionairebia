@@ -13,8 +13,8 @@ const fetchDataAndSetImgs = async () => {
 
   
   const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-images`,
-  // {cache: 'no-store',next:{revalidate:0} })
-  {next:{revalidate:1000} })
+  {cache: 'no-store',next:{revalidate:0} })
+  // {next:{revalidate:1000} })
   let res = req &&  await req.json();
   if (res?.success && res?.data?.Images) return res
   return null;
