@@ -1,5 +1,5 @@
 "use client"
-import FAQ from '@/Components/FAQ/FAQ'
+// import FAQ from '@/Components/FAQ/FAQ'
 import { Container, Box, Typography, Divider } from '@mui/material'
 import React from 'react'
 
@@ -20,7 +20,7 @@ const text = [
 const Index = () => {
   return (
     <Container maxWidth='lg' className='auto white' sx={{mx:1,py:4}}>
-           <Typography component='h1' sx={{color:'white',mb:1,mx:'auto',fontSize:'3.5em',fontStyle:'italic',fontWeight:'900'}} className=" center text-center">
+           <Typography component='h1' sx={{color:'white',mb:1,mx:'auto',fontSize:'3em',fontStyle:'',fontWeight:'900'}} className=" center text-center">
             ABOUT US - Millionairebia
         </Typography>
         

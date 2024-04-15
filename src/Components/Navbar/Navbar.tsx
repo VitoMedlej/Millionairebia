@@ -127,12 +127,16 @@ export default function Navbar() {
               <Box className="start  flex" sx={{
                 width:'fit-content',
                 zIndex:'124124124'}}>
+
               <Typography 
               className='underline cursor pointer'
               sx={{color:'#833AB4',
               zIndex:'124124124'
               ,fontSize:{xs:'.5em',sm:'.70em'},textAlign:'end',fontWeight:600}}>
+            <a href="https://www.instagram.com/millionairebia/" target="_blank" rel="noreferrer" >
             @Millionairebia
+
+            </a>
             </Typography>
               </Box>
 
