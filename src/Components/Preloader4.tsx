@@ -15,7 +15,8 @@ import useLanguage from '@/Hooks/useLanguage';
 const Preloader4 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        {img:`https://th.bing.com/th/id/R.c1c0845f0d16c0b2ee4e596901075796?rik=qV1Gz5ziGW0c7Q&pid=ImgRaw&r=0`},
+        {img:`https://wallpapercave.com/wp/wp3410831.jpg`},
+        {img:`https://wallpapercave.com/wp/wp13436505.jpg`},
      ])
      const redir = () => {
         router.push('/')
@@ -81,31 +82,34 @@ const Preloader4 = ({res}:{res:any}) => {
 
                             </Box>
                             <Box 
-                            className='auto center text-center'
+                            className='auto  center text-center'
                             sx={{
                                 top:'50%',
-                                px:{xs:4,sm:5,md:6},
+                                right:'0%',
+                                // px:{xs:4,sm:5,md:6},
                                 // maxWidth:'850px',
+                                width: {xs:'100%',lg:`100%`},
                                 transform:'translateY(-50%)',
                                 zIndex:123456,
                                 position:'absolute'}}>
                                                           <Typography 
                                                           className='clr2 center text-center auto'
                                 sx={{fontWeight:700,fontSize:{xs:'1.185em',sm:'1.2em'},mt:1,maxWidth:'600px'}}>
-                                   Millionairebia
+                                   Our Services
 
                                 </Typography>
                                 <Typography 
                                 
                                 sx={{color:'white',fontSize:{xs:'2.15em',sm:'3.1em',md:'3.65em',lg:'3.5em'},fontWeight:'900'}}>
                              
-                           Explore Millionairebia Offerings
+                           {`Explore Millionairebia's Services`}
                                 </Typography>
                                 <Typography 
                                 className='center auto text-center'
                                 sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'600px'}}>
-                               Discover a range of options designed to pamper your vehicle, ensuring it radiates elegance on every road. 
-
+{
+    `Discover a world of luxury with Millionairebia's bespoke services, tailored to elevate your lifestyle and exceed your expectations`
+}
                                 </Typography>
                                 <Box className="flex auto">
 

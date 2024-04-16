@@ -8,7 +8,7 @@ const CarPricesTable = ({ data } : any) => {
   });
 
   return (
-    <table className="car-prices-table">
+    <table className="car-prices-table white">
       <thead>
         <tr>
           <th></th>

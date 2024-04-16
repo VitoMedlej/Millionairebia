@@ -129,19 +129,21 @@ animateFn(`t2`, .5, 0.6, { name: `t1`, start: 'top 50%' });
             <Typography 
                                                           className='clr2 op0 main-1 y10 '
                                 sx={{fontWeight:700,fontSize:{xs:'1.185em',sm:'1.2em'},mt:1,maxWidth:'600px'}}>
-                                 Where Boundaries Fade
+                              Unveil Your Dream Lifestyle
                                 </Typography>
             <Typography   
             className='white op0 sub-1 y20'
                                 
                                 sx={{fontSize:{xs:'1.55em',sm:'2.1em',md:'3em',lg:'3em'},fontWeight:'900'}}>
-               Unlock the World of Luxury
+             Experience Opulence Redefined
                 </Typography>
 
                 <Typography 
                                 className='white  op0 cont-1 y10'
                                 sx={{fontSize:{xs:'.85em',sm:'1em'},mt:1,maxWidth:'600px'}}>
-              With Millionairebia&apos;s presence felt across continents, our private members club offers access to a tapestry of experiences that redefine opulence. Join our global community and unlock a lifestyle where every moment is an epitome of grandeur and achievement.
+          {
+            `Dive into a world of luxury with Millionairebia, where boundaries vanish, and possibilities unfold. Our exclusive members club opens doors to unparalleled experiences, setting new standards of opulence and refinement.`
+          }
                 </Typography>
                 <Btn
                 onClick={()=>router.push('/apply')}

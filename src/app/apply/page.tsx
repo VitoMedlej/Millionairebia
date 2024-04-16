@@ -5,7 +5,7 @@ import ApplyForm from './ApplyForm'
 
 const page = () => {
   return (
-    <Box sx={{py:20}} className='relative'>
+    <Box sx={{py:16}} className='relative'>
     <Box className="absolute w100 h100" sx={{top:0,right:0,height:'100%'}}>
         <img src="https://danielasulek.com/wp-content/uploads/2021/09/shutterstock_281520980-scaled.jpg" alt="" className="img" />
       </Box>

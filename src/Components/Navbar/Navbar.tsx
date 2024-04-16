@@ -129,8 +129,9 @@ export default function Navbar() {
                 zIndex:'124124124'}}>
 
               <Typography 
-              className='underline cursor pointer'
-              sx={{color:'#833AB4',
+              className='underline clr cursor pointer'
+              sx={{
+                // color:'#833AB4',
               zIndex:'124124124'
               ,fontSize:{xs:'.5em',sm:'.70em'},textAlign:'end',fontWeight:600}}>
             <a href="https://www.instagram.com/millionairebia/" target="_blank" rel="noreferrer" >
@@ -194,7 +195,7 @@ Blog
         alt="Millionairebia  logo"/>
 </Box>
 </Link>
-<Link className='white decor-none ' href={`/#contactsection`}>
+<Link className='white decor-none ' href={`/services`}>
 
 <Typography 
 className=' cursor center white  gap1 white decor-none captialize'
@@ -206,7 +207,7 @@ mx:'1em',
 alignItems: 'center',
 
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Contact
+Services
 </Typography>
 </Link>
 <Link className='white decor-none ' href={`/about`}>

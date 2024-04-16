@@ -65,12 +65,41 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       <ListItem
           sx={{fontWeight:600}}
 
+          onClick={()=>{router.push(`/`); toggleDrawer(false)}}
+           disablePadding>
+              <ListItemButton sx={{py:1.5}} >
+            
+                  <Typography sx={{fontWeight:600}}>
+              Home
+            </Typography>
+            </ListItemButton>
+  
+          <Divider></Divider>
+          </ListItem> 
+      <ListItem
+          sx={{fontWeight:600}}
+
           onClick={()=>{router.push(`/blog`); toggleDrawer(false)}}
            disablePadding>
               <ListItemButton sx={{py:1.5}} >
             
                   <Typography sx={{fontWeight:600}}>
-              Our Articles
+              Blog
+            </Typography>
+            </ListItemButton>
+  
+          <Divider></Divider>
+          </ListItem> 
+
+          <ListItem
+          sx={{fontWeight:600}}
+
+          onClick={()=>{router.push(`/services`); toggleDrawer(false)}}
+           disablePadding>
+              <ListItemButton sx={{py:1.5}} >
+            
+                  <Typography sx={{fontWeight:600}}>
+              Services
             </Typography>
             </ListItemButton>
   
@@ -81,7 +110,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
           onClick={()=>{router.push(`/apply`); toggleDrawer(false)}}
            disablePadding>
-              <ListItemButton sx={{py:1}} >
+              <ListItemButton sx={{py:1.5}} >
             
                   <Typography sx={{fontWeight:600}}>
                   Apply For Memebership
@@ -95,7 +124,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
           onClick={()=>{router.push(`/about`); toggleDrawer(false)}}
            disablePadding>
-              <ListItemButton sx={{py:1}} >
+              <ListItemButton sx={{py:1.5}} >
             
                   <Typography sx={{fontWeight:600}}>
              About Us
@@ -109,8 +138,8 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
           onClick={()=>{router.push(`/#contactSection`); toggleDrawer(false)}}
            disablePadding>
-              <ListItemButton sx={{py:1}} >
-            
+              <ListItemButton sx={{py:1.5}} >
+          
                   <Typography sx={{fontWeight:600}}>
              Contact
             </Typography>
@@ -126,7 +155,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
         onClick={()=>{router.push(`/rental/${encodeURIComponent(i.toLocaleLowerCase())}`); toggleDrawer(false)}}
          disablePadding>
-            <ListItemButton sx={{py:1}} >
+            <ListItemButton sx={{py:1.5}} >
           
                 <Typography sx={{fontWeight:600}}>
            {i}
@@ -163,7 +192,7 @@ router.push(`/dogs/products`)}}
 >
 
 
-  <ListItemButton sx={{py:1}} >
+  <ListItemButton sx={{py:1.5}} >
             <Typography sx={{fontWeight:300}}>
         View Dog Collections
       </Typography>
@@ -179,7 +208,7 @@ router.push(`/dogs/products`)}}
 key={i}>
 
   
-    <ListItemButton sx={{py:1}} >
+    <ListItemButton sx={{py:1.5}} >
                   <Typography sx={{fontWeight:300}}>
               -{i}
             </Typography>
@@ -215,7 +244,7 @@ Cats
 onClick={()=>
 {setOpen(false);
 router.push(`/cats/products`)}}>
-  <ListItemButton sx={{py:1}} >
+  <ListItemButton sx={{py:1.5}} >
             <Typography sx={{fontWeight:300}}>
         -Browse Cat Collection
       </Typography>
@@ -276,7 +305,7 @@ router.push(`/offers/products`)}}
 >
 
 
-  <ListItemButton sx={{py:1}} >
+  <ListItemButton sx={{py:1.5}} >
             <Typography sx={{fontWeight:300}}>
         Browse Offers
       </Typography>
@@ -291,7 +320,7 @@ router.push(`/offers/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)
 key={i}>
 
 
-  <ListItemButton sx={{py:1}} >
+  <ListItemButton sx={{py:1.5}} >
             <Typography sx={{fontWeight:300}}>
         -{i}
       </Typography>
