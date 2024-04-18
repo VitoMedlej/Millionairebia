@@ -5,13 +5,17 @@ import React from 'react'
 
 
 const text = [
-    `We understand that our customers are concerned with privacy, so we have initiated policies to ensure that your personal information is handled safely and responsibly. We collect customer information in an effort to improve your shopping experience and to communicate to you about our products, services, contests, or promotions.`,
-    `From time to time, we will send informational e-mails to you concerning True MILL Blend information only. These could be specials, contest information or short messages containing information that we think you would want to know. We also share some basic shipping details with our delivery agent for the sole purpose of delivering your order to your door.`,
-    `If at any time you wish to stop receiving these e-mails, we give you the option to remove your name from our mailing list with one easy step. We will NOT sell, rent, or share your e-mail address or personal details with a third party. We understand that this information is private and will handle it in a responsible manner.`,
-]
+    'Protecting your privacy is paramount to us at Millionairebia. Our Privacy Policy outlines how we collect, use, and safeguard your personal information:',
+    '   - We collect personal information, such as name, email address, and payment details, to provide our services and improve user experience.',
+    '   - Your personal information is securely stored and only accessed by authorized personnel for legitimate business purposes.',
+    '   - We may share your information with trusted third-party service providers who assist us in delivering our services.',
+    '   - You have the right to access, update, or delete your personal information at any time.',
+    '   - We use cookies and similar technologies to enhance your browsing experience and track usage patterns on our website.',
+    '   - By using our website and services, you consent to the collection and use of your personal information as described in this Privacy Policy.'
+  ]
 const Index = () => {
   return (
-    <Container sx={{mx:1,mt:24}} maxWidth='lg' >
+    <Container className='white' sx={{pb:4,mx:1,mt:24}} maxWidth='lg' >
         <Typography component='h1' sx={{mb:1,fontWeight:600,fontSize:'2em'}}>
            Privacy Policy
         </Typography>
@@ -25,8 +29,11 @@ const Index = () => {
             }
         </Box>
         <Box>
-            <Link href='/info/terms-and-conditions'>
+            <Link href='/terms-and-conditions'>
                 Terms and conditions
+            </Link>
+            <Link href='/rules-and-regulations'>
+                Rules & Regulations
             </Link>
         </Box>
     </Container>
