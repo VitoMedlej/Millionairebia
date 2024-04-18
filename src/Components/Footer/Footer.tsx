@@ -43,6 +43,8 @@ const Footer = () => (
             <li className='link-title'>Site links</li>
             <li><Link  href="/">Home</Link></li>
             <li><Link href="/blog">Blog</Link></li> 
+            <li><Link href="/services">Services</Link></li> 
+            <li><Link href="/about">About Us</Link></li> 
             <li><Link href="/apply">Apply For Memebership</Link></li>
             <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
@@ -50,14 +52,14 @@ const Footer = () => (
      
           <ul  className='ul-white' style={{color:'white'}}>
             <li className='link-title'>Contact</li>
-            {/* <li><Link href="mailto:sales@thecraftroom-lb.com">sales@petstown.com</Link></li> */}
+            <li><Link href="mailto:info@millionairebia.com">info@millionairebia.com</Link></li>
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
             
-            <li><a href="https://www.facebook.com/Millionairebia/" target="_blank" rel="noreferrer" >Facebook </a></li>
+            {/* <li><a href="https://www.facebook.com/Millionairebia/" target="_blank" rel="noreferrer" >Facebook </a></li> */}
             <li><a href="https://www.instagram.com/millionairebia/" target="_blank" rel="noreferrer" >Instagram</a></li>
-            <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >Whatsapp</a></li>
-            <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+961 123 456 789</a></li>
+            {/* <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >Whatsapp</a></li> */}
+            {/* <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+961 123 456 789</a></li> */}
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>
         </div>

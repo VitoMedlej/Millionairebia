@@ -93,13 +93,13 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/send-message`;
         </Typography>
   </a>
 
-  <a className='flex auto  items-center align-center gap gap1 white' href='https://www.instagram.com/millionairebia/' target='_blank' rel='noopener'>
+  {/* <a className='flex auto  items-center align-center gap gap1 white' href='https://www.instagram.com/millionairebia/' target='_blank' rel='noopener'>
     
         <Typography sx={{fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
     Facebook
         </Typography>
-  </a>
+  </a> */}
   <a className='flex auto  items-center align-center gap gap1 white' href='' target='_blank' rel='noopener'>
   <CiLocationOn/>
         <Typography sx={{my:2,fontSize:{xs:'1.15em'},fontWeight:'500'}}>

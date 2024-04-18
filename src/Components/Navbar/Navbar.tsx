@@ -129,12 +129,12 @@ export default function Navbar() {
                 zIndex:'124124124'}}>
 
               <Typography 
-              className='underline clr cursor pointer'
+              className='underline clr2 cursor pointer'
               sx={{
                 // color:'#833AB4',
               zIndex:'124124124'
               ,fontSize:{xs:'.5em',sm:'.70em'},textAlign:'end',fontWeight:600}}>
-            <a href="https://www.instagram.com/millionairebia/" target="_blank" rel="noreferrer" >
+            <a className='clr2' href="https://www.instagram.com/millionairebia/" target="_blank" rel="noreferrer" >
             @Millionairebia
 
             </a>
