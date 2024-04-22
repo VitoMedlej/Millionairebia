@@ -78,14 +78,14 @@ const Index = () => {
   return (
     <>
     <Preloader4 res={undefined}/>
-    <Container sx={{mt:{xs:4,sm:8},maxWidht:'lg'}} >
+    <Container sx={{mt:{xs:1,sm:8},maxWidht:'lg'}} >
 
   
      { carPricesWithValidity.map((i,index)=>{ return <Grid className='items-center' key={i?.category} sx={{
   py:{xs:5,sm:5,md:6},
   justifyContent:'space-around !important',
   flexDirection:{xs:'column',sm: index % 2 ? 'row' :'row-reverse'}}} container>
-        <Grid sx={{width:'100%'}} item xs={12} sm={6}>
+        <Grid sx={{width:'100%'}} item xs={12} md={6}>
             <Box sx={{width:'100%'}}>
             <Typography className='clr' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic',pb:1,maxWidth:'800px',}}>
         Our Services
@@ -125,7 +125,7 @@ const Index = () => {
       </a> */}
             </Box>
         </Grid>
-        <Grid item xs={12} sm={6} md={5}>
+        <Grid item xs={12} md={5} >
             <Box sx={{minWidth:{xs:'90vw',sm:'200px'}, width:{xs:'100%',sm:'300px',md:'500px'},height:{xs:'300px',sm:'250px',md:'350px'}}}>
               <img style={{borderRadius:'6px'}} src={i?.img} alt="" className="img cover" />
             </Box>
