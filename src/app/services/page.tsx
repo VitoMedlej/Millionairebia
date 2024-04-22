@@ -78,18 +78,18 @@ const Index = () => {
   return (
     <>
     <Preloader4 res={undefined}/>
-    <Container sx={{mt:{xs:1,sm:8},maxWidht:'lg'}} >
+    <Container sx={{mt:{xs:0,sm:8},maxWidht:'lg'}} >
 
   
      { carPricesWithValidity.map((i,index)=>{ return <Grid className='items-center' key={i?.category} sx={{
-  py:{xs:5,sm:5,md:6},
+  py:{xs:4,sm:5,md:6},
   justifyContent:'space-around !important',
   flexDirection:{xs:'column',sm: index % 2 ? 'row' :'row-reverse'}}} container>
         <Grid sx={{width:'100%'}} item xs={12} md={6}>
             <Box sx={{width:'100%'}}>
-            <Typography className='clr' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic',pb:1,maxWidth:'800px',}}>
+            {/* <Typography className='clr' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic',pb:1,maxWidth:'800px',}}>
         Our Services
-      </Typography>
+      </Typography> */}
 
       <Typography
       className='white'
