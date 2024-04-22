@@ -126,7 +126,7 @@ const Index = () => {
             </Box>
         </Grid>
         <Grid item xs={12} md={5} >
-            <Box sx={{minWidth:{xs:'90vw',sm:'200px'}, width:{xs:'100%',sm:'300px',md:'500px'},height:{xs:'300px',sm:'250px',md:'350px'}}}>
+            <Box sx={{minWidth:{xs:'90vw',sm:'200px'}, width:{xs:'100%',sm:'300px',md:'100%'},height:{xs:'300px',sm:'250px',md:'350px'}}}>
               <img style={{borderRadius:'6px'}} src={i?.img} alt="" className="img cover" />
             </Box>
         </Grid>
