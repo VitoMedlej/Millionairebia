@@ -310,7 +310,7 @@ Become a Member
               }
             ].map((i,index)=>{
               return <Box className={`relative cursor pointer y10 op0 trip-${index}`}
-              onClick={()=>router.push(`/apply?id=${encodeURIComponent(i?.title.toLowerCase())}`)}
+              // onClick={()=>router.push(`/apply?id=${encodeURIComponent(i?.title.toLowerCase())}`)}
               key={i.title} sx={{my:1,minWidth:{sm:'auto',md:'250px'},height:'330px',width:{xs:'49%',sm:'48%',md:'24%'}}}>
                 <Box sx={{height:'100%'}}>
 
