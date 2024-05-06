@@ -3,14 +3,14 @@ import '../Styles/Styles.css'
 import '../Styles/qty.css'
 import Footer from '@/Components/Footer/Footer'
 import Sidebar from '@/Components/Sidebar/Sidebar'
-import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
-import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
+// import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
+// import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
-import ContactSection from '@/Components/ContactSection/ContactSection'
+// import ContactSection from '@/Components/ContactSection/ContactSection'
 
 export const metadata = {
-    title: 'Millionairebia - Premier Car Care Services in Lebanon',
-    description: `At Millionairebia, we offer top-notch car care services in Lebanon. From expert car wash and interior detailing to exterior treatments, window tinting, vinyl wrap, upholstery repair, body paint, and more – trust us for a sparkling clean and well-maintained ride.`,
+    title: 'Millionairebia: Redefining Luxury Living | Exclusive Concierge Services & Luxury Consultations',
+    description: `Experience unparalleled luxury with Millionairebia. Our mission is to redefine luxury living by providing exclusive concierge services, expert consultations, and access to the world’s most prestigious destinations`,
     icons: {
         icon: `https://ucarecdn.com/0f405681-7972-40ce-872a-9fe8bbc1918a/logobia.jpg`
     }
