@@ -283,35 +283,35 @@ Become a Member
 
     <Container sx={{py:4,maxWidth:'lg'}}>
     <Typography className='clr2 t4 y10 op0' sx={{fontWeight:700,fontSize:'1.15em',fontStyle:'italic',pt:{xs:8,sm:10},pb:1,maxWidth:'800px',}}>
-        Our Events
+        Our Countries
       </Typography>
       <Typography className='white t5 y10 op0' sx={{fontWeight:900,fontSize:'2.5em',maxWidth:'800px',fontStyle:'italic',textTransform:''}}>
-      Four sigMILL events
+      We redefine luxury in 120 countries.
       </Typography>
       <Box sx={{mt:6}} className='flex wrap justify-around'>
           {
             [
               {
-                img:`https://lirp.cdn-website.com/05b938f9/dms3rep/multi/opt/luca-bravo-TaCk3NspYe0-unsplash-607h.jpg`,
-                title:`New York`
+                img:`https://images.pexels.com/photos/6459326/pexels-photo-6459326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`,
+                title:`Lebanon`
               },
               {
-                img: `https://lirp.cdn-website.com/05b938f9/dms3rep/multi/opt/muzammil-soorma-KTdzeb28jyo-unsplash-607h.jpg`,
-                title:`Miami`
+                img: `https://images.pexels.com/photos/162031/dubai-tower-arab-khalifa-162031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`,
+                title:`Dubai`
               },
               {
-                title:'Dubai',
-                img:'https://lirp.cdn-website.com/05b938f9/dms3rep/multi/opt/christoph-schulz-7tb-b37yHx4-unsplash-607h.jpg'
+                title:'Qatar',
+                img:'https://images.pexels.com/photos/10546983/pexels-photo-10546983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
               }
               ,
               {
                 title:`Monaco`,
-                img:`https://lirp.cdn-website.com/05b938f9/dms3rep/multi/opt/joachim-lesne-IF9KinCYXkI-unsplash-607h.jpg`
+                img:`https://images.pexels.com/photos/14079666/pexels-photo-14079666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`
               }
             ].map((i,index)=>{
               return <Box className={`relative cursor pointer y10 op0 trip-${index}`}
               onClick={()=>router.push(`/apply?id=${encodeURIComponent(i?.title.toLowerCase())}`)}
-              key={i.title} sx={{my:1,minWidth:{sm:'auto',md:'250px'},height:'300px',width:{xs:'49%',sm:'48%',md:'24%'}}}>
+              key={i.title} sx={{my:1,minWidth:{sm:'auto',md:'250px'},height:'330px',width:{xs:'49%',sm:'48%',md:'24%'}}}>
                 <Box sx={{height:'100%'}}>
 
                  <img src={i.img} alt="" className="img" />
