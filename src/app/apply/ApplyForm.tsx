@@ -28,13 +28,14 @@ const [Message, setMessage] = useState('')
 
 let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
   const sendMessage = async(e : any) => {
-
-    e.preventDefault();
-    if (!form.current) 
-    return;
+    try {
+      
+      e.preventDefault();
+    // if (!form.current) 
+    // return;
   
-  if ( !FullName || !Phone || !Message ) {
-    setStatus(400)
+  if ( !FullName || !Phone || !email ) {
+    setStatus(403)
     return;
   }
   // window.open(url);
@@ -50,23 +51,32 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
     const res = await rawResponse.json();
 
     console.log('res: ', res);
-    setStatus(res?.success ? 200 : 400)
 
     if (res?.success && form?.current) {
       form?.current?.reset()
       setFullName('')
       setPhone('')
+      setEmail('')
       setMessage('')
+      setPosition('')
+      setCountry('')
+      setStatus(200)
+}
+else {
+  setStatus(400)
+  return
+}
+}
+catch(e){
+  console.log('e: ', e);
+  setStatus(400)
+  
 }
 };
 
   return (
     <>
- 
-
-
-  
-    <Grid id='applysection' container maxWidth='lg'  className='auto'  sx={{
+ <Grid id='applysection' container maxWidth='lg'  className='auto'  sx={{
       // background:'white',
       }}>
     <Box className='flex auto w100'>
@@ -90,6 +100,17 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
        }} className='auto col center flex' item xs={12} sm={12} >
           <Typography component='h1' sx={{color:'white',fontWeight:'500',textAlign:'center'}} 
           className='p'>{status === 200 ? 'Thank you for your application! We have received your membership request. You will receive a confirmation email shortly. We appreciate your interest and look forward to welcoming you as a member.' : ""}</Typography>
+           
+           {
+            status === 400 &&
+            <Typography component='h1' sx={{color:'red',fontWeight:'500',textAlign:'center'}} 
+            className='p'>
+              Could not send your membership request. Please try again.
+            </Typography>
+           }
+           
+           
+           
             <Box ref={form} onSubmit={(e : any)=>sendMessage(e)} component='form' sx={{gap:1,
           margin : '0 auto',
           display: status === 200 ? 'none' : 'flex'
@@ -101,7 +122,9 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
               value={FullName}
 
               onChange={(e)=>setFullName(e?.target?.value)} 
-              name={'FullName'} sx={{
+              name={'FullName'} 
+              required
+              sx={{
                 color:'white',
                 borderColor:'white'
                 ,'& .MuiInputBase-input': { // targets the input itself
@@ -124,6 +147,7 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
 /> */}         
  <TextField 
 value={country}
+required
 onChange={(e)=>setCountry(e?.target?.value)} 
 name={'country'} sx={{
   color:'white',
@@ -159,6 +183,7 @@ name={'position'} sx={{
   width:'99%',py:1}} variant='filled' placeholder='Position'/>
              
               <TextField name={'Email'}
+              required
                onChange={(e)=>setEmail(e?.target?.value)} 
                variant='filled' sx={{
                 '& .MuiInputBase-input': { // targets the input itself
@@ -171,6 +196,7 @@ name={'position'} sx={{
 
               <TextField name={'Phone'} 
               value={Phone}
+              
             type='number'
               onChange={(e)=>setPhone(e?.target?.value)} 
               variant='filled' sx={{
@@ -193,6 +219,8 @@ name={'position'} sx={{
                 color: 'white', // changes the color of the input text
               },
                }} placeholder='Comment Box'/>
+              
+              {status === 403 && <>Please Fill in all the required inputs</>}
               <Btn
 submit
    

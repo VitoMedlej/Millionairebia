@@ -85,7 +85,7 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
       html: htmlContent,
   };
 
-  return await sendEmail(options);
+  return  await sendEmail(options);
 }
 
 // Call the function to send email
@@ -94,11 +94,13 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
 export  async function POST(req: NextRequest, res: NextApiResponse) {
   const {applicant} = await req.json()
   if (req.method === 'POST') {
+      console.log('applicant: ', applicant);
     if (!applicant) return NextResponse.json({success:false})
        const insertReq = await client.db("MILL").collection("Applicants").insertOne(applicant);
-        await sendOrderConfirmationEmail(applicant);
+       const result =  await sendOrderConfirmationEmail(applicant);
+       console.log('result: ', result);
 
-       if (insertReq?.acknowledged) {         
+       if (insertReq?.acknowledged && result == true) {         
          return NextResponse.json({success:true});
         }
 }
