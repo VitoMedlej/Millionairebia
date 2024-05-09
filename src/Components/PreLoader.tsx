@@ -356,6 +356,11 @@ Become a Member
        <Btn disabled={!email || email?.length < 3} onClick={()=>subscribe()} sx={{mx:'auto',mt:2}}>
         Subscribe
        </Btn>
+       <Typography sx={{pt:1,fontSize:'.67em'}}>
+          {
+           `By clicking Subscribe, you confirm that you give us consent to send you emails, and that you comply with our acceptable use policy, which includes maintaining up-to-date mailing lists and ensuring all recipients have opted in to receive emails.`
+          }
+          </Typography>
    </Container>
    
       
