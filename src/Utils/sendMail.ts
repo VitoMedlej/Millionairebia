@@ -12,7 +12,7 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
     try {
         const transporter = nodemailer.createTransport({
             host: "mail.smtp2go.com",
-            port: 2525,
+            port: 8465 ,
             secure: true,
             auth: {
                 user: "millionairebia.com",
