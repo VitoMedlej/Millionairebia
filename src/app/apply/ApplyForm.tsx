@@ -45,7 +45,7 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/apply`;
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({applicant:{FullName,Phone,email,Message}})
+    body: JSON.stringify({applicant:{FullName,Phone,email,Message,country,company,position}})
 });
     const res = await rawResponse.json();
 
@@ -201,6 +201,11 @@ submit
                 Apply
                 </Typography>
               </Btn>
+              <Typography sx={{pt:1,fontSize:'.67em'}}>
+          {
+           `By clicking ‘Submit’, you confirm that you give us consent to send you emails, and that you comply with our acceptable use policy, which includes maintaining up-to-date mailing lists and ensuring all recipients have opted in to receive emails.`
+          }
+          </Typography>
             </Box>
         </Grid>
        
