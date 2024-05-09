@@ -31,6 +31,9 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
           }
           .field {
               margin-bottom: 20px;
+              display:flex;
+              flex-direction: row;
+              gap:1;
           }
           .field label {
               font-weight: bold;
@@ -45,7 +48,7 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
   </head>
   <body>
       <div className="container">
-          <h2>Applicant's Application</h2>
+          <h2>You received a new application:</h2>
           <div className="field">
               <label htmlFor="fullName">Full Name:</label>
               <div className="field-value">${applicant.FullName}</div>
