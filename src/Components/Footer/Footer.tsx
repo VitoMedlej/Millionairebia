@@ -59,7 +59,7 @@ const Footer = () => (
             {/* <li><a href="https://www.facebook.com/Millionairebia/" target="_blank" rel="noreferrer" >Facebook </a></li> */}
             <li><a href="https://www.instagram.com/millionairebia/" target="_blank" rel="noreferrer" >Instagram</a></li>
             {/* <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >Whatsapp</a></li> */}
-            {/* <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+961 123 456 789</a></li> */}
+            <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+961 70 312 490</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>
         </div>

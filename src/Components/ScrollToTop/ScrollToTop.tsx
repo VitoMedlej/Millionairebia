@@ -34,7 +34,7 @@ const ScrollUp = () => {
       <img src="https://www.7979.org.my/uploads/1/2/6/3/126376279/whatsapp-icon_1.png" alt="Whatsapp Icon" className="img" />
       </Box>
          <Box  className='bg white' sx={{mr:1,py:1,px:2,borderRadius:25,color:''}}>
-         +961 123 456 789
+         +961 70 312 490
       </Box>
    
     </Btn>

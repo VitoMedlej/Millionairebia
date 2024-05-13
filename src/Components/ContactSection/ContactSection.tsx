@@ -77,11 +77,11 @@ let url = `${process.env.NEXT_PUBLIC_URL}/api/send-message`;
         Contact Information:
         </Typography>
   
-  <a className='flex auto  items-center align-center gap gap1 white' href='https://wa.me/+9611234567' target='_blank' rel='noopener'>
+  <a className='flex auto  items-center align-center gap gap1 white' href='https://wa.me/+96170312490' target='_blank' rel='noopener'>
     
         <Typography sx={{fontSize:{xs:'1.15em'},fontWeight:'500'}}>
                     
-    +961 0123 456 789
+        +961 70 312 490
         </Typography>
   </a>
 

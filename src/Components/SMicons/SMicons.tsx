@@ -10,7 +10,7 @@ const sm = [
         Icon:'https://images.squarespace-cdn.com/content/v1/56e2e0c520c6472a2586add2/1615388332386-LFQRQFE53FIOLDRNADTY/2.png',
         href:'https://www.instagram.com/millionairebia/'
     },
-    {Icon:'https://logospng.org/download/whatsapp/logo-whatsapp-4096.png',href:'https://wa.me/+9611234567'},
+    {Icon:'https://logospng.org/download/whatsapp/logo-whatsapp-4096.png',href:'https://wa.me/++96170312490'},
   
  ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
