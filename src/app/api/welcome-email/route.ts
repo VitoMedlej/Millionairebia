@@ -5,10 +5,8 @@ import { NextResponse } from 'next/server'
 import { type NextRequest } from 'next/server'
 
 
-async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
+export async function sendWelcomeEmail({toEmail} : {toEmail:string}): Promise<boolean> {
   
-  const applicant = formState;
-  console.log('applicant: ', applicant);
   const htmlContent = `<html lang="en">
   <head>
       <meta charSet="UTF-8" />
@@ -46,7 +44,6 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
           }
           .imgg {
             width : 100px;
-            max-width:100px;
           }
       </style>
   </head>
@@ -55,23 +52,18 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
   <div class='cont'>
   <img class='imgg' src='https://ucarecdn.com/09c3a7b0-509a-485d-a988-7a8bae7dd575/logobia.jpg' />
   </div>
-          <h2>You received a new message through the website from ${applicant?.FullName}</h2>
-          <div class="field">
-              <label htmlFor="fullName">Full Name:</label>
-              <div class="field-value">${applicant.FullName}</div>
-          </div>
-          <div class="field">
-              <label htmlFor="phone">Phone:</label>
-              <div class="field-value">${applicant.Phone}</div>
-          </div>
-          <div class="field">
-              <label htmlFor="email">Email:</label>
-              <div class="field-value">${applicant.email}</div>
-          </div>
-          <div class="field">
-              <label htmlFor="message">Message:</label>
-              <div class="field-value">${applicant.Message}</div>
-          </div>
+      <h2>Welcome to Millionairebia</h2>
+      <p>Hello dear,</p>
+      <p>Thank you for taking the time to apply for our membership to join Millionairebia Club.</p>
+      <p>We appreciate your interest in joining our exclusive community of accomplished individuals.</p>
+      <p>Your application has been received, and we will carefully review the information you provided.</p>
+      <p>Our team will be in touch with you soon regarding the status of your application.</p>
+      <p>In the meantime, if you have any questions or need further assistance, please don't hesitate to contact us.</p>
+      <p>Thank you once again for your interest in our club.</p>
+      <p>We look forward to the possibility of welcoming you as a member.</p>
+      <p style={{marginTop:'0.2em'}}>Warm regards,</p>
+    </div>
+  </div>
 
       </div>
   </body>
@@ -79,36 +71,11 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
 
   const options = {
       from: '"Millionairebia.com" <info@millionairebia.com>',
-      to: 'info@millionairebia.com',
-      subject: "New Message Through The Website!",
+      to: toEmail,
+      subject: "Welcome to Millionairebia",
       html: htmlContent,
   };
 
   return  await sendEmail(options);
 }
 
-export  async function POST(req: NextRequest, res: NextApiResponse) {
-
-
-  const {message} = await req.json()
-  console.log('applicant: ', message);
-  if (req.method === 'POST') {
-    // Process a POST request
-    if (!message) return NextResponse.json({success:false})
-       const insertReq = await client.db("MILL").collection("Messages").insertOne({message});
-      
-    
-    
-    
-    const result =  await sendOrderConfirmationEmail(message);
-    console.log('result: ', result);
-
-    if (insertReq?.acknowledged && result == true) {         
-      return NextResponse.json({success:true});
-     }
-
-
-}
-return NextResponse.json({success:false});
-
-}

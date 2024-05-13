@@ -3,6 +3,7 @@ import { sendEmail } from '@/Utils/sendMail';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server'
 import { type NextRequest } from 'next/server'
+import { sendWelcomeEmail } from '../welcome-email/route';
 
 
 
@@ -44,11 +45,18 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
               margin-bottom: 10px;
               font-size: 16px;
           }
+          .imgg {
+            width : 100px;
+            max-width:100px;
+          }
       </style>
   </head>
   <body>
-      <div className="container">
-          <h2>You received a new application:</h2>
+  <div className="container">
+  <div class='cont'>
+    <img class='imgg' src='https://ucarecdn.com/09c3a7b0-509a-485d-a988-7a8bae7dd575/logobia.jpg' />
+    </div>
+          <h2>You Received A New Application From ${applicant?.FullName}:</h2>
           <div className="field">
               <label htmlFor="fullName">Full Name:</label>
               <div className="field-value">${applicant.FullName}</div>
@@ -98,12 +106,13 @@ export  async function POST(req: NextRequest, res: NextApiResponse) {
   const {applicant} = await req.json()
   if (req.method === 'POST') {
       console.log('applicant: ', applicant);
-    if (!applicant) return NextResponse.json({success:false})
+    if (!applicant || !applicant?.email) return NextResponse.json({success:false})
        const insertReq = await client.db("MILL").collection("Applicants").insertOne(applicant);
        const result =  await sendOrderConfirmationEmail(applicant);
+       const welcomeEmail =  await sendWelcomeEmail(applicant?.email);
        console.log('result: ', result);
 
-       if (insertReq?.acknowledged && result == true) {         
+       if (insertReq?.acknowledged && result == true && welcomeEmail === true) {         
          return NextResponse.json({success:true});
         }
 }
