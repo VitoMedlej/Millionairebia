@@ -52,38 +52,38 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
       </style>
   </head>
   <body>
-  <div className="container">
+  <div class="container">
   <div class='cont'>
     <img class='imgg' src='https://ucarecdn.com/09c3a7b0-509a-485d-a988-7a8bae7dd575/logobia.jpg' />
     </div>
           <h2>You Received A New Application From ${applicant?.FullName}:</h2>
-          <div className="field">
+          <div class="field">
               <label htmlFor="fullName">Full Name:</label>
-              <div className="field-value">${applicant.FullName}</div>
+              <div class="field-value">${applicant.FullName}</div>
           </div>
-          <div className="field">
+          <div class="field">
               <label htmlFor="phone">Phone:</label>
-              <div className="field-value">${applicant.Phone}</div>
+              <div class="field-value">${applicant.Phone}</div>
           </div>
-          <div className="field">
+          <div class="field">
               <label htmlFor="email">Email:</label>
-              <div className="field-value">${applicant.email}</div>
+              <div class="field-value">${applicant.email}</div>
           </div>
-          <div className="field">
+          <div class="field">
               <label htmlFor="message">Message:</label>
-              <div className="field-value">${applicant.Message}</div>
+              <div class="field-value">${applicant.Message}</div>
           </div>
-          <div className="field">
+          <div class="field">
               <label htmlFor="country">Country:</label>
-              <div className="field-value">${applicant.country}</div>
+              <div class="field-value">${applicant.country}</div>
           </div>
-          <div className="field">
+          <div class="field">
               <label htmlFor="company">Company:</label>
-              <div className="field-value">${applicant.company}</div>
+              <div class="field-value">${applicant.company}</div>
           </div>
-          <div className="field">
+          <div class="field">
               <label htmlFor="position">Position:</label>
-              <div className="field-value">${applicant.position}</div>
+              <div class="field-value">${applicant.position}</div>
           </div>
       </div>
   </body>
@@ -110,6 +110,7 @@ export  async function POST(req: NextRequest, res: NextApiResponse) {
        const insertReq = await client.db("MILL").collection("Applicants").insertOne(applicant);
        const result =  await sendOrderConfirmationEmail(applicant);
        const welcomeEmail =  await sendWelcomeEmail(applicant?.email);
+       console.log('welcomeEmail: ', welcomeEmail);
        console.log('result: ', result);
 
        if (insertReq?.acknowledged && result == true && welcomeEmail === true) {         

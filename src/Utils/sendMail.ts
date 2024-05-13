@@ -22,6 +22,7 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
 
         const info = await transporter.sendMail(options);
         console.log("Email sent: %s", info.messageId);
+        console.log('options: ', options);
         return true;
     } catch (error) {
         console.error("Error sending email:", error);

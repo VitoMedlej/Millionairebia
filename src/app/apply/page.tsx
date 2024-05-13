@@ -3,7 +3,7 @@ import { Box, Container, Typography } from '@mui/material'
 import React from 'react'
 import ApplyForm from './ApplyForm'
 
-const page = () => {
+const Page = () => {
   return (
     <Box sx={{py:16}} className='relative'>
     <Box className="absolute w100 h100" sx={{top:0,right:0,height:'100%'}}>
@@ -22,4 +22,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

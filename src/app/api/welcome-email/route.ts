@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server'
 import { type NextRequest } from 'next/server'
 
 
-export async function sendWelcomeEmail({toEmail} : {toEmail:string}): Promise<boolean> {
+export async function sendWelcomeEmail(toEmail : string): Promise<boolean> {
   
   const htmlContent = `<html lang="en">
   <head>
