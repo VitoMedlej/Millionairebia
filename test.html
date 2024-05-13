@@ -1,13 +1,4 @@
-import client from '@/database/mongodb';
-import { sendEmail } from '@/Utils/sendMail';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { NextResponse } from 'next/server'
-import { type NextRequest } from 'next/server'
-
-
-export async function sendWelcomeEmail(toEmail : string): Promise<boolean> {
-  
-  const htmlContent = `<html lang="en">
+<html lang="en">
   <head>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -183,15 +174,4 @@ a {
 
       </div>
   </body>
-</html>`;
-
-  const options = {
-      from: '"Millionairebia.com" <info@millionairebia.com>',
-      to: toEmail,
-      subject: "Welcome to Millionairebia",
-      html: htmlContent,
-  };
-
-  return  await sendEmail(options);
-}
-
+</html>
