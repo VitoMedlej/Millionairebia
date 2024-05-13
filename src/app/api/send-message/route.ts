@@ -47,6 +47,7 @@ async function sendOrderConfirmationEmail(formState: any): Promise<boolean> {
       </style>
   </head>
   <body>
+  
       <div className="container">
           <h2>You received a new message through the website:</h2>
           <div className="field">

@@ -28,11 +28,11 @@ const Index = () => {
                 })
             }
         </Box>
-        <Box>
-            <Link href='/terms-and-conditions'>
+        <Box className='flex col wrap'>
+            <Link className='color2' href='/terms-and-conditions'>
                 Terms and conditions
             </Link>
-            <Link href='/rules-and-regulations'>
+            <Link className='color2' href='/rules-and-regulations'>
                 Rules & Regulations
             </Link>
         </Box>

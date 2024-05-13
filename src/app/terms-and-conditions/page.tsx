@@ -30,11 +30,11 @@ const Index = () => {
                 })
             }
         </Box>
-        <Box>
-            <Link href='/privacy-policy'>
+        <Box className='flex col wrap'>
+            <Link className='color2' href='/privacy-policy'>
                 Privacy Policy
             </Link>
-            <Link href='/rules-and-regulations'>
+            <Link className='color2' href='/rules-and-regulations'>
                 Rules & Regulations
             </Link>
         </Box>

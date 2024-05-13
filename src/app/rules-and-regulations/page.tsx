@@ -27,11 +27,11 @@ const page = () => {
                 })
             }
         </Box>
-        <Box>
-            <Link href='/terms-and-conditions'>
+        <Box className='flex col wrap'>
+            <Link className='color2' href='/terms-and-conditions'>
                 Terms and conditions
             </Link>
-            <Link href='/privacy-policy'>
+            <Link className='color2' href='/privacy-policy'>
                 Privacy Policy
             </Link>
         </Box>
