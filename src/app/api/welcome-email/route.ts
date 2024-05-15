@@ -114,7 +114,7 @@ export async function sendWelcomeEmail(toEmail : string): Promise<boolean> {
                     <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
                      <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                        <tr>
-                        <td align="center" class="es-m-txt-l" style="padding:0;Margin:0;padding-bottom:10px"><h1 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:46px;font-style:normal;font-weight:bold;line-height:55px;color:#333333">Hello dear</h1></td>
+                        <td align="center" class="es-m-txt-l" style="padding:0;Margin:0;padding-bottom:10px"><h1 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:46px;font-style:normal;font-weight:bold;line-height:55px;color:#333333">Welcome to Millionairebia</h1></td>
                        </tr>
                      </table></td>
                    </tr>
@@ -269,10 +269,17 @@ export async function sendWelcomeEmail(toEmail : string): Promise<boolean> {
                         <td align="center" style="padding:0;Margin:0;padding-top:15px;padding-bottom:15px;font-size:0">
                          <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                            <tr>
-                            <td align="center" valign="top" style="padding:0;Margin:0;padding-right:40px"><img title="X.com" src="https://ehryzep.stripocdn.email/content/assets/img/social-icons/logo-black/x-logo-black.png" alt="X" width="32" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
-                            <td align="center" valign="top" style="padding:0;Margin:0;padding-right:40px"><img title="Instagram" src="https://ehryzep.stripocdn.email/content/assets/img/social-icons/logo-black/instagram-logo-black.png" alt="Inst" width="32" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
-                            <td align="center" valign="top" style="padding:0;Margin:0"><img title="Youtube" src="https://ehryzep.stripocdn.email/content/assets/img/social-icons/logo-black/youtube-logo-black.png" alt="Yt" width="32" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
+                           <a href='https://wa.me/+96170312490'>
+                           <td align="center" valign="top" style="padding:0;Margin:0;padding-right:40px"><img title="whatsapp.com" src="https://cdn-icons-png.flaticon.com/128/1384/1384095.png" alt="X" width="32" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
+                           </a>
+                           <a href='https://www.instagram.com/millionairebia/'>
+                           <td align="center" valign="top" style="padding:0;Margin:0;padding-right:40px"><img title="Instagram" src="https://cdn-icons-png.flaticon.com/128/15522/15522253.png" alt="Inst" width="32" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
+                           </a>
+
+                           <a href='mailto:info@millionairebia.com'>
+                           <td align="center" valign="top" style="padding:0;Margin:0"><img title="Email" src="https://cdn-icons-png.flaticon.com/128/2549/2549872.png" alt="Yt" width="32" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
                            </tr>
+                           </a>
                          </table></td>
                        </tr>
                 
